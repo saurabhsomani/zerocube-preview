@@ -1,0 +1,8 @@
+{
+ "chain": "zerocube-pledge-ledger",
+ "pending": true,
+ "note": "Genesis pending: the first block is added after launch, the night the first pledges are approved. The public signing key is published with the genesis block.",
+ "keyId": null,
+ "head": -1,
+ "headers": []
+}
