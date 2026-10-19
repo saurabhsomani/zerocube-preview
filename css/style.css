@@ -606,3 +606,4 @@ code.hash.sm{font-size:.72rem}
 @media(max-width:1300px){.topbar .ofl{display:none}}
 .numbers .ngrp{min-width:0}
 @media(max-width:420px){.numbers .ngrp .stats{gap:6px}.numbers .ngrp b{font-size:1.7rem}.numbers .ngrp span{font-size:.8rem}}
+.ecofig figcaption.ecocap{position:static;background:none;color:var(--muted);padding:0;border-radius:0;font-size:.95rem;z-index:auto}
