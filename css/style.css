@@ -607,3 +607,33 @@ code.hash.sm{font-size:.72rem}
 .numbers .ngrp{min-width:0}
 @media(max-width:420px){.numbers .ngrp .stats{gap:6px}.numbers .ngrp b{font-size:1.7rem}.numbers .ngrp span{font-size:.8rem}}
 .ecofig figcaption.ecocap{position:static;background:none;color:var(--muted);padding:0;border-radius:0;font-size:.95rem;z-index:auto}
+/* MEMBERSHIP V2 (19 Oct 2026) */
+.mv2-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+@media(max-width:760px){.mv2-2{grid-template-columns:1fr}}
+ul.ticks{list-style:none;padding:0;margin:8px 0}
+ul.ticks li{position:relative;padding-left:26px;margin:7px 0;line-height:1.45}
+ul.ticks li::before{content:"";position:absolute;left:2px;top:.35em;width:14px;height:8px;border-left:2.5px solid #1F6F50;border-bottom:2.5px solid #1F6F50;transform:rotate(-45deg)}
+p.mini{font-size:.9rem;color:var(--muted);margin:10px 0 0}
+.lpa{list-style:none;padding:0;margin:0 0 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lpa.lpa5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.lpa li{background:#fff;border:1px solid #DCE6E0;border-radius:16px;padding:20px 18px;position:relative}
+.lpa h3{font-size:1.05rem;margin:8px 0 6px}.lpa p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+.lpa-n{display:inline-flex;width:34px;height:34px;border-radius:50%;background:#0F3D2E;color:#fff;font-weight:800;align-items:center;justify-content:center}
+@media(max-width:1000px){.lpa.lpa5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.lpa,.lpa.lpa5{grid-template-columns:1fr}}
+.lf-pays{max-width:none}
+.cmp-g{font-size:1.1rem;margin:26px 0 10px;color:#0F3D2E}
+details.cmp{background:#fff;border:1px solid #DCE6E0;border-radius:14px;margin:8px 0;overflow:hidden}
+details.cmp summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 46px 14px 18px;position:relative;min-height:44px}
+details.cmp summary::-webkit-details-marker{display:none}
+details.cmp summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.4rem;font-weight:700;color:#1F6F50}
+details.cmp[open] summary::after{content:"−"}
+details.cmp[open] summary{background:#EEF6F1}
+.cmp-n{font-weight:800;color:#0B2A20}.cmp-p{color:#5A4A12;font-weight:700;font-size:.92rem;text-align:right}
+.cmp-b{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;padding:6px 18px 18px}
+.cmp-b h4{margin:12px 0 4px;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;color:#1F6F50}
+.cmp-b dl{margin:6px 0}.cmp-b dt{font-weight:800;margin-top:8px;color:#0B2A20}.cmp-b dd{margin:2px 0 0;line-height:1.5}
+.cmp-go{display:inline-block;margin-top:10px;font-weight:700}
+@media(max-width:640px){.cmp-b{grid-template-columns:1fr;gap:4px}details.cmp summary{flex-direction:column;align-items:flex-start;gap:2px}.cmp-p{text-align:left}}
+.split>*{min-width:0}
+@media(max-width:560px){#fees .grid{grid-template-columns:1fr!important}}
