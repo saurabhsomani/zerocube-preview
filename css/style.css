@@ -637,3 +637,6 @@ details.cmp[open] summary{background:#EEF6F1}
 @media(max-width:640px){.cmp-b{grid-template-columns:1fr;gap:4px}details.cmp summary{flex-direction:column;align-items:flex-start;gap:2px}.cmp-p{text-align:left}}
 .split>*{min-width:0}
 @media(max-width:560px){#fees .grid{grid-template-columns:1fr!important}}
+.guide-dl{display:flex;gap:20px;align-items:center;justify-content:space-between;background:#EEF6F1;border-color:#CFE3D7;margin:6px 0 10px}
+.guide-dl h3{margin:0 0 4px}.guide-dl p{margin:0 0 6px}
+@media(max-width:700px){.guide-dl{flex-direction:column;align-items:flex-start}.guide-dl .btn{width:100%;text-align:center}}

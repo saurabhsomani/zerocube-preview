@@ -11,7 +11,7 @@ function today(){return new Date().toISOString().slice(0,10)}
 function fd(d){return d?new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}):""}
 function save(){if(S.demo){sessionStorage.setItem("zc_mp_cc",JSON.stringify(S.cert));sessionStorage.setItem("zc_mp_au",JSON.stringify(S.audit));sessionStorage.setItem("zc_mp_ms",JSON.stringify(S.membership))}}
 /* Member gate (director, 18 Oct 2026): the pledge is free for everyone; the Commitment Certificate and Net Zero audit interest unlock only when the pledge is
-   Approved on the ledger AND the membership is Active. Village / Gram Panchayat audits never need a paid membership (sponsor/CSR route — open decision). */
+   Approved on the ledger AND the membership is Active. Village / Gram Panchayat audits never need a paid membership (CSR route; no membership needed — decided). */
 function ms(){return (S.membership&&S.membership.status)||"None"}
 function memberActive(){return ms()==="Active"}
 function joinUrl(){return C.MEMBERSHIP_OPEN?"membership.html?pledge="+encodeURIComponent(S.p.id)+"#chooser":"membership.html#waitlist"}
@@ -115,7 +115,7 @@ function labelFor(w){var x=WHO.find(function(a){return a[0]===w});return x?x[1]:
 function feeLine(w){return w==="village"?'<b>Villages never pay.</b> Village audits are funded through CSR and donor support.':'Fees are <b>as per our <a href="membership.html#tiers">fee card</a></b>. You will see the applicable fee before anything is agreed.'}
 function auRender(){var el=$("#auditBody"),a=S.audit;
   if(a.status==="none"&&!memberActive()&&!S.villageRoute){
-    el.innerHTML=lockBox("Showing interest in a Net Zero audit",'<hr><p><b>A village or Gram Panchayat?</b> Villages never pay and never need a paid membership. Village audits go through the free, sponsor-funded route (CSR and donors).</p><p><button class="btn btn-ghost" type="button" id="auVillage">Send a village audit interest (no membership or fee)</button></p>');
+    el.innerHTML=lockBox("Showing interest in a Net Zero audit",'<hr><p><b>A village or Gram Panchayat?</b> Villages never pay and never need a paid membership. Village Net Zero certification is funded through CSR, at no cost to the village.</p><p><button class="btn btn-ghost" type="button" id="auVillage">Send a village audit interest (no membership or fee)</button></p>');
     $("#auVillage").addEventListener("click",function(){S.villageRoute=true;auRender()});return}
   if(a.status==="none"){
     el.innerHTML='<p>A Zero Cube <b>Net Zero audit</b> is an assessment under <b>Zero Cube\'s own criteria</b>: a footprint baseline (including Scope 3 where relevant), the main sources, and a practical reduction plan. It is not third-party assurance or accredited verification.</p>'+
@@ -131,7 +131,7 @@ function auRender(){var el=$("#auditBody"),a=S.audit;
     '<button class="btn btn-pri" type="submit">Send my interest</button><div id="auStatus" class="pstatus" role="status" aria-live="polite"></div></form>';
     var who=$("#auWho");
     if(!memberActive()){who.innerHTML='<option value="village">Village / Gram Panchayat</option>';who.value="village";$("#auUnit").textContent=unitFor("village");
-      el.insertAdjacentHTML("afterbegin",'<p class="pstatus demo">Village route: no membership and no fee. Village audits are funded by sponsors and CSR. <button class="linkbtn" type="button" id="auBack">Back</button></p>');$("#auBack").addEventListener("click",function(){S.villageRoute=false;auRender()})}
+      el.insertAdjacentHTML("afterbegin",'<p class="pstatus demo">Village route: no membership and no fee. Village Net Zero certification is funded through CSR. <button class="linkbtn" type="button" id="auBack">Back</button></p>');$("#auBack").addEventListener("click",function(){S.villageRoute=false;auRender()})}
     who.addEventListener("change",function(){$("#auUnit").textContent=unitFor(who.value);$("#auOrgRow").hidden=who.value==="home"});
     $("#auForm").addEventListener("submit",function(ev){ev.preventDefault();var st=$("#auStatus"),w=who.value,d={who:w,org:$("#auOrg").value.trim(),city:$("#auCity").value.trim(),state:$("#auState").value.trim(),size:+$("#auSize").value,time:$("#auTime").value,phone:$("#auPhone").value.trim(),notes:$("#auNotes").value.trim()};
       var err=!w?"Please choose who the audit is for.":(w!=="home"&&!d.org)?"Please give the organisation, village or society name.":!d.city||!d.state?"Please give the city and state.":!(d.size>=1)?"Please give the size (a number).":!d.time?"Please choose a contact time.":(d.phone&&d.phone.replace(/\D/g,"").length<10)?"Please check the mobile number (10 digits).":!$("#auConsent").checked?"Please tick the consent box.":"";
