@@ -699,3 +699,24 @@ details.cmp[open] summary{background:#EEF6F1}
 @media(max-width:980px){.vk-grid,.mv-intro .wrap,.jgrid{grid-template-columns:1fr}.wd4,.path4{grid-template-columns:repeat(2,minmax(0,1fr))}.mani-t{grid-template-columns:1fr 1fr}.why3{grid-template-columns:1fr}.jform{position:static}.path4 li:after{display:none}}
 @media(max-width:640px){.wd4,.path4,.mani,.mani-t{grid-template-columns:1fr}.vkband{padding:44px 0}.vk-big{font-size:2.3rem}.fvk .vk-deva{font-size:1.25rem}.wn{font-size:2rem}}
 .tier .price{margin-top:12px}
+/* ===== EDUCATION PILLAR update (21 Oct 2026): dream, two equal pillars, one ecosystem around every child ===== */
+.dreamsec{background:linear-gradient(180deg,#FFF8EA,#fff);text-align:center;padding:68px 0}
+.dreamsec .wrap{max-width:900px}.dream-h{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.15;color:var(--forest);margin:.3em 0 .2em}
+.dream-sub{font:600 1.3rem/1.4 MA,sans-serif;color:var(--navy);margin:0 0 18px}.dreamsec .sdgt{justify-content:center}
+.dream-in{text-align:left}.dream-in .dream-h{font-size:clamp(1.6rem,3vw,2.2rem)}
+.pillars2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pillar2{display:flex;flex-direction:column;border-top:6px solid var(--leaf)}.pillar2+.pillar2{border-top-color:#C5192D}
+.pillar2 h3{font-size:1.5rem;margin:.2em 0 .4em}.p2s{font-weight:700;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-top:12px}
+.pillar2 .more{margin-top:auto;padding-top:10px;font-weight:700}
+.p2-join{text-align:center;max-width:760px;margin:26px auto 0;font-size:1.08rem}
+.eco3sec{background:linear-gradient(180deg,#F5FAF7,#fff)}
+.eco3{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px;counter-reset:none}
+.e3{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 20px;box-shadow:0 6px 18px rgba(15,61,46,.06)}
+.e3:not(:last-child):after{content:"→";position:absolute;right:-28px;top:50%;transform:translateY(-50%);font:700 1.6rem/1 sans-serif;color:var(--leaf)}
+.e3n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.95rem}
+.e3 h3{font-size:1.12rem;margin:12px 0 6px}.e3 h3 small{display:block;font-weight:600;color:var(--muted);font-size:.82rem;margin-top:2px}.e3 p{font-size:.95rem;margin:0 0 10px}
+.e3dream{background:linear-gradient(135deg,var(--forest),var(--navy));color:#E4EFE9;border:0;display:flex;flex-direction:column;justify-content:center}
+.e3dream h3{color:#fff;font-size:1.35rem}.e3dream .ic{background:var(--gold);color:var(--forest)}.e3dream p{color:#E4EFE9}
+.fwbox{margin-top:30px;background:#EEF6F1;border:1px solid #CFE3D7;border-radius:var(--r);padding:22px 24px}.fwbox h3{margin-top:0}
+@media(max-width:980px){.eco3{grid-template-columns:1fr 1fr}.e3:nth-child(2):after{display:none}}
+@media(max-width:640px){.pillars2,.eco3{grid-template-columns:1fr}.eco3{gap:30px}.e3:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-29px;transform:translateX(-50%);display:block}.dreamsec{padding:48px 0}.dream-sub{font-size:1.1rem}}
