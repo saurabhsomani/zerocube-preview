@@ -1,4 +1,4 @@
-/* Zero Cube — LAUNCH (24 Oct 2026): "Send us your payment details" form (.payform) and contact form (.contactform).
+/* Zero Cube — LAUNCH (24 Oct 2026): "Send us your payment details" form (.payform) and contact form (.contactform), and the chapter expression-of-interest form (.chapterform, 24 Oct 2026).
    Both open a pre-filled email to zerocubecif@gmail.com. Nothing is stored on the website; no card, UPI PIN or bank password is ever asked for.
    Bank / UPI / gateway details shown on the page come from build_parts/launch_config.py (PAY). */
 (function(){
@@ -71,6 +71,36 @@ function contactForm(box){
     try{window.location.href=href}catch(x){}
   });
 }
-function boot(){[].forEach.call(document.querySelectorAll(".payform"),payForm);[].forEach.call(document.querySelectorAll(".contactform"),contactForm)}
+function chapterForm(box){
+  var f=document.createElement("form"); f.className="pform"; f.noValidate=true;
+  f.innerHTML='<span class="eyebrow">Chapter interest</span><h3>Start Zero Cube in your country</h3>'+
+  row("chN","Full name *",'<input id="chN" name="name" required maxlength="80" autocomplete="name">')+
+  row("chE","Email *",'<input id="chE" name="email" type="email" required maxlength="120" autocomplete="email">')+
+  row("chC","Country *",'<input id="chC" name="country" required maxlength="60" autocomplete="country-name">')+
+  row("chCity","City *",'<input id="chCity" name="city" required maxlength="60" autocomplete="address-level2">')+
+  row("chO","Organisation or background *",'<input id="chO" name="org" required maxlength="160" placeholder="e.g. teacher, engineer, NPO, student group">')+
+  row("chW","Why do you want to start Zero Cube in your country? *",'<textarea id="chW" name="why" rows="4" required maxlength="1500"></textarea>')+
+  row("chT","Founding team size *",'<select id="chT" name="team" required><option value="">Choose…</option><option>Just me for now</option><option>2</option><option>3</option><option>4–5</option><option>6 or more</option></select>')+
+  '<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">'+
+  '<label class="chk"><input type="checkbox" name="consent" required><span>I agree that Zero Cube may store these details and contact me about starting a chapter. This is not a commitment on either side, and I can ask for my details to be deleted at any time.</span></label>'+
+  '<p class="row"><button class="btn btn-donate" type="submit">Send my interest</button></p><div class="pstatus" role="status" aria-live="polite"></div>';
+  box.insertBefore(f,box.firstChild);
+  f.addEventListener("submit",function(e){e.preventDefault();if(f.website.value)return;var st=f.querySelector(".pstatus");var v=function(n){return (f[n].value||"").trim()};
+    function err(m,el){st.className="pstatus err";st.textContent=m;el.focus()}
+    if(!v("name"))return err("Please enter your name.",f.name);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email")))return err("Please enter a valid email address.",f.email);
+    if(!v("country"))return err("Please tell us your country.",f.country);
+    if(!v("city"))return err("Please tell us your city.",f.city);
+    if(!v("org"))return err("Please tell us your organisation or background.",f.org);
+    if(!v("why"))return err("Please tell us why you would like to start a chapter.",f.why);
+    if(!v("team"))return err("Please choose your founding team size.",f.team);
+    if(!f.consent.checked)return err("Please tick the consent box so we can contact you.",f.consent);
+    var body="I would like to start Zero Cube in my country.\n\nName: "+v("name")+"\nEmail: "+v("email")+"\nCountry: "+v("country")+"\nCity: "+v("city")+"\nOrganisation or background: "+v("org")+"\nFounding team size: "+v("team")+"\n\nWhy: "+v("why")+"\n\nI agree that Zero Cube may store these details and contact me about starting a chapter. This is not a commitment on either side.";
+    var href="mailto:"+TO+"?subject="+encodeURIComponent("Chapter interest: "+v("country"))+"&body="+encodeURIComponent(body);
+    st.className="pstatus ok";st.innerHTML="Your email app should open with your details filled in — just press <b>Send</b>. If it does not open, <a href=\""+esc(href)+"\">click here</a> or email <a href=\"mailto:"+TO+"\">"+TO+"</a>.";
+    try{window.location.href=href}catch(x){}
+  });
+}
+function boot(){[].forEach.call(document.querySelectorAll(".payform"),payForm);[].forEach.call(document.querySelectorAll(".contactform"),contactForm);[].forEach.call(document.querySelectorAll(".chapterform"),chapterForm)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
 })();
