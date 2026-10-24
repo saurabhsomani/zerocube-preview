@@ -740,3 +740,6 @@ details.cmp[open] summary{background:#EEF6F1}
 .ftable tbody tr{border:1px solid var(--line);border-radius:12px;margin:0 0 12px;padding:4px 0;background:#fff!important}.ftable tbody th{font-weight:700;color:var(--navy);border-bottom:1px solid var(--line)}
 .ftable td{border-bottom:0;padding:5px 12px;overflow-wrap:anywhere}.ftable td.fv{white-space:normal}.ftable td::before{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .ftable td:nth-of-type(1)::before{content:"Value"}.ftable td:nth-of-type(2)::before{content:"Unit"}.ftable td:nth-of-type(3)::before{content:"Source (date)"}.ftable td:nth-of-type(4)::before{content:"How we use it"}}
+/* DUMMY DETAILS (24 Oct 2026): sample strip + demo gateway button */
+.sample-strip{background:#B3261E;color:#fff;border-radius:10px;padding:10px 16px;margin:0 0 18px;font-size:.95rem;line-height:1.4}
+.pay-demo-msg{display:block;margin-top:8px;color:var(--muted)}
