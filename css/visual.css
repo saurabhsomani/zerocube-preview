@@ -6,8 +6,8 @@
 .vhero .slides img:only-child{opacity:1;animation:vkb1 22s ease-in-out infinite alternate}
 .vhero .slides img:nth-child(1){animation-delay:0s}.vhero .slides img:nth-child(2){animation-delay:6s}.vhero .slides img:nth-child(3){animation-delay:12s}.vhero .slides img:nth-child(4){animation-delay:18s}
 @keyframes vfade{0%{opacity:0}4%{opacity:1}25%{opacity:1}30%{opacity:0}100%{opacity:0}}
-@keyframes vkb{0%{object-position:42% 30%}30%{object-position:58% 70%}100%{object-position:58% 70%}}
-@keyframes vkb1{from{object-position:35% 30%}to{object-position:65% 70%}}
+@keyframes vkb{0%{object-position:45% 25%}30%{object-position:60% 40%}100%{object-position:60% 40%}}
+@keyframes vkb1{from{object-position:40% 25%}to{object-position:62% 40%}}
 .vhero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,22,.92) 0%,rgba(6,30,22,.72) 48%,rgba(6,30,22,.25) 100%);z-index:1}
 .vhero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center;width:100%}
 .vhero .vcap{position:absolute;right:10px;bottom:8px;z-index:3;font-size:.68rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);padding:2px 8px;border-radius:99px}
@@ -142,3 +142,12 @@ details.vd>.vdb .page-hero{display:none}
  .lv .stem{stroke-dashoffset:0}.lv .leaf{transform:scale(1)}.lv .co2{opacity:.6}
  .vcard,.vcard .vimg img,.vtile{transition:none}
 }
+
+/* FACES REFRESH (26 Oct 2026): faces stay in frame */
+.vhero .slides img{object-position:60% 30%}
+.vcard .vimg img{object-position:50% 28%}
+.vcard .vimg+.vb .vic{width:44px;height:44px;margin-top:-40px;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.12);position:relative}
+.vcard.vdark .vimg+.vb .vic{border-color:var(--vg);background:#145C40}
+.vcard .vimg small{left:auto;right:8px;top:6px;bottom:auto}
+.vcard.wide .vimg{aspect-ratio:2.6/1}
+@media (max-width:760px){.vhero::before{background:linear-gradient(180deg,rgba(6,30,22,.45) 0%,rgba(6,30,22,.72) 45%,rgba(6,30,22,.9) 100%)}.vcard.wide .vimg{aspect-ratio:16/9}}

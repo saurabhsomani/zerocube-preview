@@ -27,5 +27,21 @@ Files are stored locally in `img/` as WebP (`<key>.webp` 1600 px, `<key>-sm.webp
 | earth-night | Earth seen from space at night, with city lights | [@bhavyapratap27](https://unsplash.com/@bhavyapratap27) | https://unsplash.com/photos/a-view-of-the-earth-from-space-8D55FR1k4mA | Unsplash License |
 
 _Rows from `learning` down were added on 26 Oct 2026 (visual refresh). They were found through Unsplash's free-licence search and are served from images.unsplash.com (not Unsplash+)._
+| kids-selfie | A group of smiling schoolchildren in uniform crowding together for a photo | [@cotk_photo](https://unsplash.com/@cotk_photo) | https://unsplash.com/photos/group-of-children-taking-picture-j9jZSqfH5YI | Unsplash License |
+| kids-uniform | Smiling schoolboys in blue uniforms standing together outdoors | [@akshar_dave](https://unsplash.com/@akshar_dave) | https://unsplash.com/photos/group-of-boys-wearing-blue-school-uniforms-photo-b5UILRPGV_g | Unsplash License |
+| girl-smile | A young girl in a yellow shirt laughing in a green field | [@vigneshwar](https://unsplash.com/@vigneshwar) | https://unsplash.com/photos/girl-in-yellow-polo-shirt-smiling-69geKhuZhZs | Unsplash License |
+| boy-book | A smiling boy holding a yellow book, with other children reading behind him | [@imdzaid](https://unsplash.com/@imdzaid) | https://unsplash.com/photos/boy-in-red-crew-neck-shirt-holding-yellow-book-Hg-ZgKIOdpw | Unsplash License |
+| village-women | Women in colourful saris standing together in a green field | [@equalstock](https://unsplash.com/@equalstock) | https://unsplash.com/photos/a-group-of-women-standing-next-to-each-other-in-a-field-WMC9n7E9IuU | Unsplash License |
+| women-planting | Women in saris tending young trees in a field | [@equalstock](https://unsplash.com/@equalstock) | https://unsplash.com/photos/a-group-of-women-standing-around-a-tree-wsKfvr5AANg | Unsplash License |
+| shop-owner | A smiling young woman standing in a small shop | [@moonboyz](https://unsplash.com/@moonboyz) | https://unsplash.com/photos/a-smiling-young-woman-in-a-pink-embroidered-shirt-dQ_wawhNzT4 | Unsplash License |
+| factory-worker | A smiling worker in a blue uniform at a textile facility | [@equalstock](https://unsplash.com/@equalstock) | https://unsplash.com/photos/a-worker-smiles-in-a-linen-processing-facility-_Nloj0Wz1BM | Unsplash License |
+| businesswoman | A confident businesswoman in a blue suit smiling | [@silverkblack](https://unsplash.com/@silverkblack) | https://unsplash.com/photos/a-confident-businesswoman-in-a-blue-suit-smiles-ft1ET-Sizow | Unsplash License |
+| professional | A smiling young woman wearing glasses | [@nanduvasudevan](https://unsplash.com/@nanduvasudevan) | https://unsplash.com/photos/a-woman-wearing-glasses-standing-next-to-a-sign-IOkcmoOFyRs | Unsplash License |
+| volunteers-group | A group of smiling volunteers holding bags of collected litter outdoors | [@silverkblack](https://unsplash.com/@silverkblack) | https://unsplash.com/photos/diverse-group-of-volunteers-holding-trash-bags-outdoors-NGdaKKVt4w0 | Unsplash License |
+| community-group | A large group of people in colourful traditional Indian clothing gathered outdoors | [@mr_bond1999](https://unsplash.com/@mr_bond1999) | https://unsplash.com/photos/a-group-of-people-in-traditional-indian-clothing-FKZU-zouF8s | Unsplash License |
+| ngo-women | Two smiling women in traditional dress walking along a street | [@juanmarquez](https://unsplash.com/@juanmarquez) | https://unsplash.com/photos/two-women-wearing-traditional-dress-walking-on-street-while-smiling-during-daytime-koGajQP3jXA | Unsplash License |
+| team-meeting | People around a meeting table listening to a presentation | [@smartworkscoworking](https://unsplash.com/@smartworkscoworking) | https://unsplash.com/photos/people-sitting-at-the-table-looking-to-another-person-standing-in-front-of-them-Uz8THWPXwhI | Unsplash License |
+
+_Rows from `kids-selfie` down were added on 26 Oct 2026 (faces refresh), found through Unsplash's free-licence search and served from images.unsplash.com (not Unsplash+). People shown are not Zero Cube members, beneficiaries or partners._
 
 Also listed on the website at `credits.html` (linked from the footer: “Photo credits”).
