@@ -1,0 +1,4 @@
+/* VISUAL REFRESH (26 Oct 2026): open a "Read more" section when a link points inside it */
+(function(){function openTo(h){if(!h||h.length<2)return;var el;try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){return}if(!el)return;var d=el.closest&&el.closest('details');var any=false;while(d){if(!d.open){d.open=true;any=true}d=d.parentElement&&d.parentElement.closest('details')}if(any)setTimeout(function(){el.scrollIntoView()},30)}
+document.addEventListener('DOMContentLoaded',function(){openTo(location.hash)});window.addEventListener('hashchange',function(){openTo(location.hash)});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a)return;var u=new URL(a.href,location.href);if(u.pathname===location.pathname)openTo(u.hash)});})();

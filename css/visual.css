@@ -1,0 +1,144 @@
+/* VISUAL REFRESH (26 Oct 2026): less text, pictures, live graphics, easy CTAs. Loaded after style.css. */
+:root{--vg:#0F3D2E;--vl:#2E8B57;--vgold:#D9A441;--vnavy:#12263F}
+.vhero{position:relative;overflow:hidden;color:#fff;background:#0A2C21;padding:64px 0 56px;min-height:520px;display:flex;align-items:center}
+.vhero .slides{position:absolute;inset:0}
+.vhero .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:vfade 24s infinite,vkb 24s infinite;will-change:opacity}
+.vhero .slides img:only-child{opacity:1;animation:vkb1 22s ease-in-out infinite alternate}
+.vhero .slides img:nth-child(1){animation-delay:0s}.vhero .slides img:nth-child(2){animation-delay:6s}.vhero .slides img:nth-child(3){animation-delay:12s}.vhero .slides img:nth-child(4){animation-delay:18s}
+@keyframes vfade{0%{opacity:0}4%{opacity:1}25%{opacity:1}30%{opacity:0}100%{opacity:0}}
+@keyframes vkb{0%{object-position:42% 30%}30%{object-position:58% 70%}100%{object-position:58% 70%}}
+@keyframes vkb1{from{object-position:35% 30%}to{object-position:65% 70%}}
+.vhero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,22,.92) 0%,rgba(6,30,22,.72) 48%,rgba(6,30,22,.25) 100%);z-index:1}
+.vhero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center;width:100%}
+.vhero .vcap{position:absolute;right:10px;bottom:8px;z-index:3;font-size:.68rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);padding:2px 8px;border-radius:99px}
+.vhero .eyebrow{background:rgba(255,255,255,.14);color:#CFEBD9}
+.vhero h1{color:#fff;font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.08;margin:.35em 0 .3em;max-width:720px}
+.vhero h1 em{font-style:normal;color:var(--vgold)}
+.vhero .vline{font-size:clamp(1.02rem,1.6vw,1.22rem);color:#E3F1E8;max-width:620px;margin:0 0 .4em}
+.vhero .vnote{display:inline-block;margin:.5em 0 0;font-weight:700;color:#0A2C21;background:#E9F6EE;border-radius:10px;padding:7px 12px;font-size:.95rem}
+.vhero .vart{justify-self:center;width:100%;max-width:340px;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 68%);border-radius:50%}
+.vcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.vcta .btn{min-height:52px;padding:14px 24px;font-size:1.04rem}
+.vcta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.8)}
+.vcta2{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.vcta2 a{color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid var(--vgold);padding:6px 0}
+.vsec{padding:64px 0}
+.vsec.tint{background:linear-gradient(180deg,#F3F9F5,#fff)}
+.vhead{text-align:center;max-width:760px;margin:0 auto 30px}
+.vhead h2{margin:.3em 0 .2em}.vhead p{color:var(--muted);font-size:1.08rem;margin:0}
+.vgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.vgrid.vtwo{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.vcard{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(15,61,46,.07);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
+a.vcard:hover,.vcard:focus-within{transform:translateY(-3px);box-shadow:0 14px 34px rgba(15,61,46,.13)}
+.vcard .vimg{aspect-ratio:16/9;overflow:hidden;background:#dfe9e3;position:relative}
+.vcard .vimg img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .4s ease}
+.vcard:hover .vimg img{filter:saturate(1.15) brightness(1.04)}
+.vcard .vimg small{position:absolute;left:8px;bottom:6px;font-size:.66rem;color:#fff;background:rgba(0,0,0,.4);padding:1px 7px;border-radius:99px}
+.vcard .vb{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.vcard h3{margin:0;font-size:1.18rem;color:var(--vg)}
+.vcard p{margin:0;color:var(--muted);line-height:1.5}
+.vcard .vgo{margin-top:auto;padding-top:8px}
+.vcard .vgo .btn{min-height:46px;width:100%;justify-content:center}
+.vic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--mint);color:var(--vl)}
+.vic svg{width:28px;height:28px}
+.vcard.goal{border-top:6px solid var(--vl)}.vcard.goal.edu{border-top-color:var(--vgold)}
+.vcard.wide{grid-column:span 2}
+.vcard.vdark{background:var(--vg);color:#fff;border-color:var(--vg)}.vcard.vdark h3{color:#fff}.vcard.vdark p{color:#CFE6D8}.vcard.vdark .vic{background:rgba(255,255,255,.12);color:#BFE3CC}
+.vcard.gold{background:#FFF8E8;border-color:#F0DDB0}
+.vtag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--vl)}
+.vbig{font:700 clamp(1.3rem,2.6vw,1.9rem)/1.3 inherit;color:var(--vg);text-align:center;max-width:820px;margin:0 auto}
+.vbig b{color:var(--vl)}
+/* pathway Audit -> Framework -> Certified */
+.vpath{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;max-width:980px;margin:0 auto}
+.vstep{background:#fff;border:2px solid var(--line);border-radius:20px;padding:20px 16px;text-align:center;position:relative}
+.vstep .vic{margin:0 auto 10px;width:64px;height:64px;border-radius:50%}
+.vstep .vic svg{width:32px;height:32px}
+.vstep b{display:block;font-size:1.15rem;color:var(--vg)}
+.vstep span{display:block;color:var(--muted);font-size:.95rem;margin-top:4px}
+.vstep.fin{border-color:var(--vl);background:#EEF8F1}.vstep.fin .vic{background:var(--vl);color:#fff}
+.varrow{width:60px;height:14px;position:relative}
+.varrow::before{content:"";position:absolute;left:0;right:8px;top:6px;height:2px;background:repeating-linear-gradient(90deg,var(--vl) 0 8px,transparent 8px 14px);background-size:28px 2px;animation:vdash 1.2s linear infinite}
+.varrow::after{content:"";position:absolute;right:0;top:1px;border:6px solid transparent;border-left:9px solid var(--vl)}
+@keyframes vdash{to{background-position:28px 0}}
+.vstep .pulse{position:absolute;inset:-2px;border-radius:20px;border:2px solid var(--vl);opacity:0;animation:vpulse 3.6s infinite}
+.vstep:nth-of-type(1) .pulse{animation-delay:0s}.vstep:nth-of-type(2) .pulse{animation-delay:1.2s}.vstep:nth-of-type(3) .pulse{animation-delay:2.4s}
+@keyframes vpulse{0%{opacity:0}10%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.vflow{text-align:center;margin:26px auto 0;max-width:820px;color:var(--vg);font-weight:700;font-size:1.08rem;background:#F3F9F5;border:1px dashed #9FCDB0;border-radius:14px;padding:14px 18px}
+.vincl{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;background:var(--vg);color:#fff;padding:16px 20px;font-weight:800;font-size:clamp(1.02rem,2vw,1.25rem);text-align:center}
+.vincl small{display:block;width:100%;font-weight:500;font-size:.88rem;color:#CFE6D8}
+.vincl svg{width:24px;height:24px;color:var(--vgold)}
+/* end CTA */
+.vend{background:linear-gradient(135deg,#0F3D2E,#145C40);color:#fff;padding:60px 0;text-align:center}
+.vend h2{color:#fff;margin:.2em 0 .2em}.vend p{color:#CFE6D8;margin:0 auto 24px;max-width:640px}
+.vend .vtiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto}
+.vtile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:120px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-weight:800;font-size:1.06rem;padding:16px;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s}
+.vtile:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.vtile svg{width:30px;height:30px;color:var(--vgold)}
+.vtile small{font-weight:500;color:#CFE6D8;font-size:.82rem}
+.vtile.pri{background:var(--vgold);color:var(--vnavy);border-color:var(--vgold)}.vtile.pri svg{color:var(--vnavy)}.vtile.pri small{color:#4a3a12}
+/* read more accordions */
+.vrm{padding:44px 0 56px;background:#FAFCFB;border-top:1px solid var(--line)}
+.vrm h2{font-size:1.4rem;margin:0 0 4px}.vrm>.wrap>p{color:var(--muted);margin:0 0 16px}
+details.vd{border:1px solid var(--line);border-radius:14px;background:#fff;margin:10px 0;overflow:hidden}
+details.vd>summary{list-style:none;cursor:pointer;padding:16px 52px 16px 18px;font-weight:700;color:var(--vg);position:relative;min-height:24px}
+details.vd>summary::-webkit-details-marker{display:none}
+details.vd>summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--mint);color:var(--vl);display:grid;place-items:center;font-size:1.2rem;line-height:28px;text-align:center}
+details.vd[open]>summary::after{content:"–"}
+details.vd>summary small{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
+details.vd>.vdb>section,details.vd>.vdb>div{padding:18px 0}
+details.vd>.vdb .page-hero{display:none}
+/* compact tier cards */
+.tier details.tmore{margin-top:6px}
+.tier details.tmore>summary{cursor:pointer;font-weight:700;color:var(--vl);padding:8px 0}
+.tier .wl-open{min-height:48px}
+/* live SVG graphics */
+.lv{width:100%;height:auto;display:block;overflow:visible}
+.lv .spin{transform-origin:center;transform-box:fill-box;animation:vspin 30s linear infinite}
+.lv .land{animation:vland 22s linear infinite}
+@keyframes vland{to{transform:translateX(-300px)}}
+@keyframes vspin{to{transform:rotate(360deg)}}
+.lv .orb{transform-origin:100px 100px;animation:vspin 14s linear infinite}
+.lv .orb.r{animation-duration:20s;animation-direction:reverse}
+.lv .stem{stroke-dasharray:140;stroke-dashoffset:140;animation:vgrow 7s ease-out infinite}
+.lv .leaf{transform-box:fill-box;transform-origin:bottom left;transform:scale(0);animation:vleaf 7s ease-out infinite}
+.lv .leaf.l2{transform-origin:bottom right;animation-delay:.6s}.lv .leaf.l3{animation-delay:1.2s}
+@keyframes vgrow{0%{stroke-dashoffset:140}45%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes vleaf{0%,35%{transform:scale(0)}55%,92%{transform:scale(1)}100%{transform:scale(1);opacity:0}}
+.lv .co2{animation:vrise 6s ease-in infinite;opacity:0}
+.lv .co2.b{animation-delay:2s}.lv .co2.c{animation-delay:4s}
+@keyframes vrise{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-90px);opacity:0}}
+.lv .rays{transform-origin:center;transform-box:fill-box;animation:vspin 18s linear infinite}
+.lv .flow{stroke-dasharray:6 8;animation:vflow 1s linear infinite}
+@keyframes vflow{to{stroke-dashoffset:-14}}
+.lv .glow{animation:vglow 2.4s ease-in-out infinite alternate}
+@keyframes vglow{from{opacity:.35}to{opacity:1}}
+.lv .float{animation:vfloat 5s ease-in-out infinite alternate}
+@keyframes vfloat{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.vartcard{background:radial-gradient(circle at 50% 40%,#EAF6EF,#fff 70%);border-radius:22px;padding:18px;border:1px solid var(--line)}
+/* sticky mobile CTA bar */
+.vbar{display:none}
+@media (max-width:760px){
+ .vbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:2147482000;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.1);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+ body:has(.pv-banner) .vbar{bottom:30px}
+ .vbar a,.vbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;font:700 .78rem/1.1 inherit;color:var(--vg);text-decoration:none;border-radius:12px;background:none;border:0;padding:4px}
+ .vbar svg{width:22px;height:22px}
+ .vbar .p{background:var(--vgold);color:var(--vnavy)}
+ body{padding-bottom:70px!important}
+ body:has(.pv-banner){padding-bottom:100px!important}
+ .vhero{min-height:0;padding:40px 0 36px}
+ .vhero::before{background:linear-gradient(180deg,rgba(6,30,22,.78),rgba(6,30,22,.9))}
+ .vhero .wrap{grid-template-columns:1fr}
+ .vhero .vart{max-width:118px;order:-1;justify-self:start;margin-bottom:-10px}
+ .vcta .btn{flex:1 1 140px;justify-content:center}
+ .vpath{grid-template-columns:1fr;gap:6px}
+ .varrow{transform:rotate(90deg);margin:6px auto;width:40px}
+ .vend .vtiles{grid-template-columns:1fr 1fr}
+ .vcard.wide{grid-column:auto}
+ .vsec{padding:44px 0}
+}
+@media (prefers-reduced-motion:reduce){
+ .vhero .slides img,.lv *,.varrow::before,.vstep .pulse{animation:none!important}
+ .vhero .slides img:first-child{opacity:1}
+ .lv .stem{stroke-dashoffset:0}.lv .leaf{transform:scale(1)}.lv .co2{opacity:.6}
+ .vcard,.vcard .vimg img,.vtile{transition:none}
+}

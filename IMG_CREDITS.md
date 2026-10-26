@@ -19,5 +19,13 @@ Files are stored locally in `img/` as WebP (`<key>.webp` 1600 px, `<key>-sm.webp
 | seedling | Two pairs of hands planting a small green seedling | [Hammilton Ojijo](https://unsplash.com/@ojijohammilton) | https://unsplash.com/photos/two-pairs-of-hands-planting-a-small-green-seedling-OQC1dP2fL80 | Unsplash License |
 | water | Villagers gather water from a communal source | [Wietse Jongsma](https://unsplash.com/@wietsej) | https://unsplash.com/photos/villagers-gather-water-from-a-communal-source-Sf7ZdZjAUIo | Unsplash License |
 | village | A dirt road with houses and trees | [Sourajit Hazra](https://unsplash.com/@abhay95) | https://unsplash.com/photos/a-dirt-road-with-houses-and-trees-in-the-background-b-O15p8xTns | Unsplash License |
+| learning | Children seated at desks in a classroom, seen from a distance | [@swastikarora](https://unsplash.com/@swastikarora) | https://unsplash.com/photos/a-group-of-young-children-sitting-in-a-classroom-nFx5TuNxz64 | Unsplash License |
+| planting | Two people planting a small sapling in soil | [@kampie](https://unsplash.com/@kampie) | https://unsplash.com/photos/people-planting-sapling-in-soil-BLnlzRWHxgM | Unsplash License |
+| volunteers | Volunteers cleaning up a forest with trash bags | [@silverkblack](https://unsplash.com/@silverkblack) | https://unsplash.com/photos/volunteers-cleaning-up-a-forest-with-trash-bags-3V7uOi0XzoU | Unsplash License |
+| community | People gathered outdoors with large bags of produce near trees | [@rohit16dey](https://unsplash.com/@rohit16dey) | https://unsplash.com/photos/people-gathered-with-large-bags-of-produce-near-trees-_gO7V0fMpac | Unsplash License |
+| earth | Planet Earth seen from space with clouds above Africa | [NASA](https://unsplash.com/@nasa) | https://unsplash.com/photos/earth-with-clouds-above-the-african-continent-vhSz50AaFAs | Unsplash License |
+| earth-night | Earth seen from space at night, with city lights | [@bhavyapratap27](https://unsplash.com/@bhavyapratap27) | https://unsplash.com/photos/a-view-of-the-earth-from-space-8D55FR1k4mA | Unsplash License |
+
+_Rows from `learning` down were added on 26 Oct 2026 (visual refresh). They were found through Unsplash's free-licence search and are served from images.unsplash.com (not Unsplash+)._
 
 Also listed on the website at `credits.html` (linked from the footer: “Photo credits”).
