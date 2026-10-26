@@ -151,3 +151,6 @@ details.vd>.vdb .page-hero{display:none}
 .vcard .vimg small{left:auto;right:8px;top:6px;bottom:auto}
 .vcard.wide .vimg{aspect-ratio:2.6/1}
 @media (max-width:760px){.vhero::before{background:linear-gradient(180deg,rgba(6,30,22,.45) 0%,rgba(6,30,22,.72) 45%,rgba(6,30,22,.9) 100%)}.vcard.wide .vimg{aspect-ratio:16/9}}
+
+/* dMRV inclusion (t230u) */
+.tier .tincl{margin:6px 0 2px;font-size:.86rem;font-weight:700;color:#1F6B43;background:#EAF6EF;border-radius:8px;padding:6px 10px}
