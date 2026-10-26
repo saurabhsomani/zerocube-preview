@@ -46,3 +46,11 @@ _Rows from `learning` down were added on 26 Oct 2026 (visual refresh). They were
 _Rows from `kids-selfie` down were added on 26 Oct 2026 (faces refresh), found through Unsplash's free-licence search and served from images.unsplash.com (not Unsplash+). People shown are not Zero Cube members, beneficiaries or partners._
 
 Also listed on the website at `credits.html` (linked from the footer: “Photo credits”).
+
+_Added 27 Oct 2026 (home “Why this matters” section), found through Unsplash's free-licence search (not Unsplash+); people shown are not Zero Cube members, beneficiaries or partners:_
+
+| Key | Description | Photographer | Source | Licence |
+|---|---|---|---|---|
+| habit-tree | A smiling woman tending plants in the courtyard of her home | [@equalstock](https://unsplash.com/@equalstock) | https://unsplash.com/photos/a-woman-kneeling-down-next-to-a-potted-plant-yCKFpb4CybU | Unsplash License |
+| habit-repair | An elderly tailor repairing clothes on a sewing machine in his small workshop | [@aj4xo](https://unsplash.com/@aj4xo) | https://unsplash.com/photos/an-old-tailor-sewing-clothes-in-his-small-cluttered-workshop-E3rxgwVAtKE | Unsplash License |
+| habit-kids-run | Two smiling children running along a sunlit village road | [@moonbhuyan](https://unsplash.com/@moonbhuyan) | https://unsplash.com/photos/2-children-running-on-road-during-daytime-nSL6ZFJNJl4 | Unsplash License |

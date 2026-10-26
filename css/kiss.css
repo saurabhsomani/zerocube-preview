@@ -39,3 +39,38 @@
 .kwg p{margin:3px 0;font-size:.92rem;line-height:1.4}
 @media (max-width:760px){.kcert{padding:40px 0}.kcert-grid{grid-template-columns:1fr;gap:20px}.kcert-img{aspect-ratio:16/10}.kcards{grid-template-columns:1fr 1fr}.kcard:last-child{grid-column:1/-1}.kbox{padding:14px 16px}}
 @media (min-width:761px){.kcards{grid-template-columns:repeat(6,1fr)}.kcard{grid-column:span 2}.kcard:nth-child(4),.kcard:nth-child(5){grid-column:span 3}}
+/* HABITS (27 Oct 2026): home "Why this matters" (replaces the 5-card certification banner) */
+.khab{padding:58px 0 50px;background:linear-gradient(180deg,#F3FAF5 0%,#fff 70%)}
+.khab-head{text-align:center;max-width:760px;margin:0 auto 26px}
+.khab-head h2{margin:8px 0 10px;font-size:clamp(1.7rem,3.2vw,2.5rem);color:var(--vnavy)}
+.khab-head h2 em{font-style:normal;color:var(--vl)}
+.khab-head p{font-size:1.08rem;color:#33463d;margin:0}
+.hcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hcard{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 26px rgba(15,61,46,.10);transition:transform .3s ease,box-shadow .3s ease;animation:hfade .8s ease both}
+.hcard:nth-child(2){animation-delay:.15s}.hcard:nth-child(3){animation-delay:.3s}
+.hcard:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,61,46,.16)}
+.himg{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe9e3}
+.himg img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;transition:transform 1.2s ease}
+.hcard:hover .himg img{transform:scale(1.05)}
+.himg small{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.55);color:#fff;font-size:.66rem;padding:2px 7px;border-radius:6px}
+.hb{padding:16px 18px 20px}
+.htag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a5a12;background:#FBF0D6;border-radius:999px;padding:3px 10px}
+.hb h3{margin:8px 0 6px;font-size:1.25rem;color:var(--vg)}
+.hb p{margin:0;color:#3c4d45;line-height:1.5}
+.hmethod{margin:26px auto 0;max-width:1000px;background:#fff;border:1px solid #E3EAE5;border-radius:16px;padding:14px 16px}
+.hsteps{list-style:none;margin:0;padding:0;display:flex;align-items:stretch;justify-content:space-between;gap:6px}
+.hstep{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:4px 6px}
+.hstep b{color:var(--vg);font-size:1rem}
+.hstep>span:last-child{font-size:.86rem;color:#4A5A52;line-height:1.35}
+.hsi{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#E7F4EC;color:var(--vl);animation:kbob 3.2s ease-in-out infinite}
+.hstep:nth-child(3) .hsi{animation-delay:.4s}.hstep:nth-child(5) .hsi{animation-delay:.8s}.hstep:nth-child(7) .hsi{animation-delay:1.2s;background:#FBF0D6;color:#9a6b06}
+.hsi svg{width:20px;height:20px}
+.harr{align-self:center;color:var(--vgold);font-weight:900;font-size:1.3rem}
+.hcap{text-align:center;margin:8px 0 0;font-size:.85rem;font-weight:700;color:var(--vg)}
+.hclose{text-align:center;font-size:1.25rem;font-weight:800;color:var(--vnavy);margin:26px 0 4px}
+.hcertline{text-align:center;color:#3c4d45;margin:0 0 6px}
+.hcta{justify-content:center}
+.khab .kcert-note{text-align:center;max-width:760px;margin:12px auto 0}
+@keyframes hfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hcard,.hsi{animation:none}.hcard,.himg img{transition:none}}
+@media (max-width:760px){.khab{padding:40px 0}.hcards{grid-template-columns:1fr;gap:16px}.hsteps{display:grid;grid-template-columns:1fr 1fr;gap:10px}.harr{display:none}.hclose{font-size:1.1rem}}
