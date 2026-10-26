@@ -42,6 +42,7 @@ _Rows from `learning` down were added on 26 Oct 2026 (visual refresh). They were
 | ngo-women | Two smiling women in traditional dress walking along a street | [@juanmarquez](https://unsplash.com/@juanmarquez) | https://unsplash.com/photos/two-women-wearing-traditional-dress-walking-on-street-while-smiling-during-daytime-koGajQP3jXA | Unsplash License |
 | team-meeting | People around a meeting table listening to a presentation | [@smartworkscoworking](https://unsplash.com/@smartworkscoworking) | https://unsplash.com/photos/people-sitting-at-the-table-looking-to-another-person-standing-in-front-of-them-Uz8THWPXwhI | Unsplash License |
 
+| girls-desk | Two schoolgirls reading and writing at a classroom desk | [@swastikarora](https://unsplash.com/@swastikarora) | https://unsplash.com/photos/two-young-girls-sitting-at-a-desk-in-a-classroom-TcKmus54ij0 | Unsplash License |
 _Rows from `kids-selfie` down were added on 26 Oct 2026 (faces refresh), found through Unsplash's free-licence search and served from images.unsplash.com (not Unsplash+). People shown are not Zero Cube members, beneficiaries or partners._
 
 Also listed on the website at `credits.html` (linked from the footer: “Photo credits”).
