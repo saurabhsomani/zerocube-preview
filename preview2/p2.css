@@ -97,3 +97,7 @@ footer b{color:#fff}
 .tile .cap{font-size:.58rem;left:10px;right:auto;max-width:80%}
 @media (max-width:760px){.vis>.cap{bottom:auto;top:66px;right:10px;left:auto;max-width:70%}}
 @media (min-width:761px){.tiles.t4{grid-template-columns:repeat(4,1fr)}}
+/* SARAF PHOTOS (27 Oct 2026): keep people in frame */
+main img[src*="zc-school-talk"]{object-position:22% 50%!important}
+main img[src*="zc-students-group"]{object-position:50% 60%!important}
+main img[src*="zc-plant-team"]{object-position:45% 60%!important}

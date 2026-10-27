@@ -54,3 +54,18 @@ _Added 27 Oct 2026 (home “Why this matters” section), found through Unsplash
 | habit-tree | A smiling woman tending plants in the courtyard of her home | [@equalstock](https://unsplash.com/@equalstock) | https://unsplash.com/photos/a-woman-kneeling-down-next-to-a-potted-plant-yCKFpb4CybU | Unsplash License |
 | habit-repair | An elderly tailor repairing clothes on a sewing machine in his small workshop | [@aj4xo](https://unsplash.com/@aj4xo) | https://unsplash.com/photos/an-old-tailor-sewing-clothes-in-his-small-cluttered-workshop-E3rxgwVAtKE | Unsplash License |
 | habit-kids-run | Two smiling children running along a sunlit village road | [@moonbhuyan](https://unsplash.com/@moonbhuyan) | https://unsplash.com/photos/2-children-running-on-road-during-daytime-nSL6ZFJNJl4 | Unsplash License |
+
+
+## Founders' own photographs (added 27 Oct 2026)
+Shared by Rtn Rajendrakumar V Saraf (email of 27 Oct 2026). Originals: saraf_photos/originals (not published). Web copies resized to 1600/800 px webp with all EXIF/GPS removed.
+
+- zc-plant-hill.webp: IMG-20250720-WA0094.jpg (2025-07-20): Volunteers digging pits and planting saplings on a hill slope. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-plant-team.webp: IMG-20250815-WA0324.jpg (2025-08-15): A team planting saplings together on cleared ground. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-plant-group.webp: IMG-20250615-WA0113.jpg (2025-06-15): A group of people planting a young tree beside a lake. Caption: Earlier community work by our founders, 2025 (before Zero Cube was formed).
+- zc-students-group.webp: IMG-20250918-WA0093.jpg (2025-09-18): A large group of young people with banners outside a campus building (cropped to the group). Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-team-banner.webp: IMG-20250918-WA0112.jpg (2025-09-18): Volunteers standing together with a banner outdoors. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-community-meet.webp: IMG-20250925-WA0042.jpg (2025-09-25): People seated in an open-air thatched shelter for a community meeting. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-tent-talk.webp: IMG-20260306-WA0056.jpg (2026-03-06): A speaker talking with a seated audience under a large tent. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-school-talk.webp: IMG-20260317-WA0138.jpg (2026-02-21): A speaker giving a climate talk to schoolchildren in a classroom. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-trashion.webp: 20251223_200838.jpg (2025-12-23): Children on stage at a “Sustainable Trashion” show of outfits made from waste. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
+- zc-women-talk.webp: IMG_20250311_145338.jpg (2025-03-11): A speaker giving an awareness talk to a room full of women. Caption: Earlier community work by our founders, 2025 (before Zero Cube was formed).

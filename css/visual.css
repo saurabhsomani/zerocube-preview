@@ -165,3 +165,7 @@ details.vd>.vdb .page-hero{display:none}
 .vlp-cards .vb{padding:14px}.vlp-cards h3{font-size:1.02rem}.vlp-cards .vic{width:40px;height:40px}.vlp-cards .vic svg{width:22px;height:22px}
 .tier .tincl.lp{background:#FFF6E0;color:#6B4A0E}
 @media (max-width:760px){.vlp{grid-template-columns:1fr}.vlp-cards{grid-template-columns:1fr}}
+/* SARAF PHOTOS (27 Oct 2026): keep people in frame */
+body img[src*="zc-school-talk"]{object-position:22% 50%!important}
+body img[src*="zc-students-group"]{object-position:50% 60%!important}
+body img[src*="zc-plant-team"]{object-position:45% 60%!important}
