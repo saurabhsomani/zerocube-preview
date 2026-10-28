@@ -74,7 +74,7 @@ function letterHTML(){
   '<p><b>My daily habits:</b></p><ol>'+(items||'<li>…</li>')+'</ol>'+
   '<p><b>Quality education:</b> '+eduLine(c,d)+'</p>'+
   '<p><b>My tangible outcome, every year:</b> about <b>'+fmtKg(kg)+' CO₂e</b> less'+(c.litres?', about '+c.litres.toLocaleString("en-IN")+' litres of water saved':'')+', and '+(c.edu.mode==="teach"?c.edu.hoursYear.toLocaleString("en-IN")+' learning hours':fmtRs(c.edu.rupeesYear)+' for students')+'. CO₂e is an indicative estimate (Zero Cube Methodology v1), not a measured or verified result.</p>'+
-  '<p class="lresp">This pledge is my personal responsibility and a voluntary moral commitment. It is not a legal contract and not a donation to Zero Cube. I may withdraw my details at any time.</p>'+
+  '<p class="lresp">This pledge is my personal responsibility and a voluntary moral promise. It is not a legal contract and not a donation to Zero Cube. I may withdraw my details at any time.</p>'+
   '<div class="lsig"><span class="sig">'+esc(d.name||"Your Name")+'</span><span>Climate Duty Bearer, for life · signed on '+dt+'</span></div>'+
   '<p class="lfoot">'+(C.SITE_URL+C.PLEDGE_PATH).replace(/^https?:\/\//,"")+' · #'+C.HASHTAG+'</p>';
 }
@@ -101,7 +101,7 @@ function drawLetter(cv){
     var sp=P;P+=40;MW-=40;para(plain(o.t),"700 25px Lato, sans-serif","#1F2A27",34);y-=10;para(OUT(id,c.per[id])+(c.per[id].kg?" — indicative estimate":""),"400 22px Lato, sans-serif","#5B6B66",30);P=sp;MW+=40});
   para("Quality education: "+plain(eduLine(c,d)),"400 25px Lato, sans-serif","#1F2A27",36);
   para("My tangible outcome, every year: about "+fmtKg(kg)+" CO₂e less (indicative estimate, Methodology v1)"+(c.litres?", "+c.litres.toLocaleString("en-IN")+" litres of water saved":"")+".","400 24px Lato, sans-serif","#33413C",34);
-  y=Math.max(y+10,H-330);para("A voluntary moral commitment and my personal responsibility — not a legal contract and not a donation to Zero Cube.","italic 400 22px Lato, sans-serif","#5B6B66",32);
+  y=Math.max(y+10,H-330);para("A voluntary moral pledge and my personal responsibility — not a legal contract and not a donation to Zero Cube.","italic 400 22px Lato, sans-serif","#5B6B66",32);
   var sy2=Math.min(Math.max(y+60,H-170),H-140);ctx.fillStyle=FOREST;ctx.font="italic 500 56px PFD, Georgia, serif";ctx.fillText(d.name||"Your Name",P,sy2);ctx.fillStyle=GOLD;ctx.fillRect(P,sy2+20,420,3);
   ctx.fillStyle="#5B6B66";ctx.font="400 22px Lato, sans-serif";ctx.fillText("Climate Duty Bearer, for life · signed on "+dt,P,sy2+55);
   ctx.fillStyle=FOREST;ctx.fillRect(0,H-60,W,60);ctx.fillStyle="#fff";ctx.font="700 22px Lato, sans-serif";ctx.fillText((C.SITE_URL+C.PLEDGE_PATH).replace(/^https?:\/\//,"")+"  ·  #"+C.HASHTAG,P,H-22);
@@ -130,7 +130,7 @@ function certHTML(p,seal,chain){var c=calcD(p),k=c.kg,e=c.edu,groups={};(p.ids||
   (c.litres?'<p class="mini">Also about '+c.litres.toLocaleString("en-IN")+' litres of water saved a year.</p>':'')+'</div>'+
   '<div class="cert-foot"><div><span class="sig">'+esc(dispName(p))+'</span><small>Climate Duty Bearer, for life</small></div><div><span class="cert-date">'+esc(fdate(p.date))+'</span><small>Date pledged · once, for life</small></div></div>'+
   (chain?'<div class="cert-chain">'+chainSeal(p,chain,true)+'</div>':'')+
-  '<p class="lresp">A personal, voluntary moral commitment — not a legal contract, a donation or a certification of results. CO₂e under <a href="pledge-methodology.html">Pledge methodology v1</a>.</p></div></div>'}
+  '<p class="lresp">A personal, voluntary moral pledge — not a legal contract, a donation or a certification of results. CO₂e under <a href="pledge-methodology.html">Pledge methodology v1</a>.</p></div></div>'}
 return {
   ready:ready,
   card:function(cv,story,d,photo){D=d;photoData=photo||null;drawCard(cv,story)},

@@ -1,4 +1,4 @@
-/* Zero Cube — My Pledge "next steps": Commitment Certificate application and Net Zero audit expression of interest.
+/* Zero Cube — My Pledge "next steps": Pledge Certificate application and Net Zero audit expression of interest.
    PROTOTYPE: in demo mode everything stays in this browser (SAMPLE data). Live: backend actions applyCert, progress, auditInterest (Chain_Auth_Mail.gs — DRAFT, UNTESTED). */
 window.ZCNext=(function(){
 "use strict";
@@ -10,7 +10,7 @@ function esc(s){return h.esc(s)}
 function today(){return new Date().toISOString().slice(0,10)}
 function fd(d){return d?new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}):""}
 function save(){if(S.demo){sessionStorage.setItem("zc_mp_cc",JSON.stringify(S.cert));sessionStorage.setItem("zc_mp_au",JSON.stringify(S.audit));sessionStorage.setItem("zc_mp_ms",JSON.stringify(S.membership))}}
-/* Member gate (director, 18 Oct 2026): the pledge is free for everyone; the Commitment Certificate and Net Zero audit interest unlock only when the pledge is
+/* Member gate (director, 18 Oct 2026): the pledge is free for everyone; the Pledge Certificate and Net Zero audit interest unlock only when the pledge is
    Approved on the ledger AND the membership is Active. Village / Gram Panchayat audits never need a paid membership (CSR route; no membership needed — decided). */
 function ms(){return (S.membership&&S.membership.status)||"None"}
 function memberActive(){return ms()==="Active"}
@@ -28,7 +28,7 @@ function nextSteps(){var cs=S.cert.status,as=S.audit.status,ma=memberActive(),LO
   var t2=c2?LOCK:as==="none"?badge("Not sent","idle"):badge(as,as==="Scoped"?"ok":"wait");
   var mb={None:badge("Not a member","idle"),Applied:badge("Applied","wait"),Active:badge("Active","ok"),Expired:badge("Expired","bad")}[ms()];
   $("#nextGrid").innerHTML=
-  tile("📜","Commitment Certificate",c1?lockTxt+"A formal certificate of your lifelong pledge — no extra fee for members.":"A formal certificate of your lifelong pledge — no extra fee for members.",t1,c1?joinBtn:'<a class="btn btn-pri sm" href="#ccPanel">'+(cs==="Issued"?"View certificate":cs==="none"?"Apply":"See status")+'</a>',c1)+
+  tile("📜","Pledge Certificate",c1?lockTxt+"A formal certificate of your lifelong pledge — no extra fee for members.":"A formal certificate of your lifelong pledge — no extra fee for members.",t1,c1?joinBtn:'<a class="btn btn-pri sm" href="#ccPanel">'+(cs==="Issued"?"View certificate":cs==="none"?"Apply":"See status")+'</a>',c1)+
   tile("🏭","Net Zero audit",c2?lockTxt+"Show interest in a Net Zero audit (included in your membership). Villages never pay.":"Interested in a Net Zero audit for your home, school, business or village?",t2,c2?joinBtn:'<a class="btn btn-pri sm" href="#auditPanel">'+(as==="none"?"Show interest":"See status")+'</a>',c2)+
   tile("🤝","Membership",ma?"Your membership unlocks the certificate and audit.":"Join in your own capacity — experts, MSMEs, schools, students and more.",mb,ma?'<a class="btn btn-ghost sm" href="#memPanel">See membership</a>':'<a class="btn btn-gold sm" href="'+joinUrl()+'">Which membership fits me?</a>')+
   tile("📣","Share your pledge","Share your card — one pledge inspires many more.","",'<button class="btn btn-ghost sm" type="button" id="nsShare">Share my card</button>');
@@ -39,7 +39,7 @@ function tile(ic,t,d,b,btn,lk){return '<div class="ns-tile'+(lk?' locked':'')+'"
 
 /* ---------- membership ---------- */
 function memRender(){var el=$("#memBody"),m=S.membership||{status:"None"},st=ms();
-  var head={None:"You are not a Zero Cube member yet.",Applied:"Your membership application is being processed: we confirm eligibility and send an invoice. Benefits unlock once it is active.",Active:"Your membership is active. The Commitment Certificate and Net Zero audit interest are unlocked (once your pledge is approved and on the ledger).",Expired:"Your membership has expired. A certificate already issued stays valid as a record; renewals, progress updates and new requests need an active membership."}[st];
+  var head={None:"You are not a Zero Cube member yet.",Applied:"Your membership application is being processed: we confirm eligibility and send an invoice. Benefits unlock once it is active.",Active:"Your membership is active. The Pledge Certificate and Net Zero audit interest are unlocked (once your pledge is approved and on the ledger).",Expired:"Your membership has expired. A certificate already issued stays valid as a record; renewals, progress updates and new requests need an active membership."}[st];
   var info=(st==="Active"||st==="Expired")?'<dl><dt>Tier</dt><dd>'+esc(m.tier||"")+'</dd><dt>Member ID</dt><dd>'+esc(m.memberId||"")+'</dd><dt>'+(st==="Active"?"Valid till":"Expired on")+'</dt><dd>'+esc(fd(st==="Active"?m.validTill:m.expiredOn))+'</dd></dl>':'';
   var link=m.link&&m.link.status==="Pending"?'<p class="pstatus demo" role="status">Link request sent ('+(m.link.by==="id"?"member ID "+esc(m.link.value):"email match")+'). A moderator will confirm it'+(S.demo?' — <b>demo mode:</b> nothing was sent.':'.')+'</p>':'';
   el.innerHTML='<div class="mem-row"><p style="margin:0">'+({None:badge("None","idle"),Applied:badge("Applied","wait"),Active:badge("Active","ok"),Expired:badge("Expired","bad")}[st])+' '+head+'</p>'+info+'</div>'+
@@ -54,37 +54,37 @@ function memRender(){var el=$("#memBody"),m=S.membership||{status:"None"},st=ms(
     if(S.demo||!C.ENDPOINT){S.membership.link={status:"Pending",by:by,value:id};save();render();return}
     h.api({action:"linkMembership",session:localStorage.getItem("zc_mp_session"),by:by,memberId:id}).then(function(j){if(j.ok){S.membership=j.membership;render()}else h.msg(st2,esc(j.error||"Something went wrong."),"err")},function(){h.msg(st2,"Could not reach the server.","err")})})}
 
-/* ---------- Commitment Certificate ---------- */
+/* ---------- Pledge Certificate ---------- */
 function certData(){var c=S.cert;return c.record?c:(S.demo?X.account.cert:c)}
 function qrSvg(url){try{var q=qrcode(0,"M");q.addData(url);q.make();return q.createSvgTag({cellSize:3,margin:2,scalable:true})}catch(e){return ""}}
 function ccHTML(){var c=certData(),r=c.record,p=S.p,k=ZC_CALC.calc(p),e=k.edu,url=SITE+"verify.html?id="+encodeURIComponent(r.certNo);
   return '<div class="ccert">'+(S.demo?'<span class="cc-sample">SAMPLE — not a real certificate</span>':'')+'<div class="ccert-in">'+
   '<div class="ccert-top"><img src="assets/img/logo.png" alt="" width="54" height="54"><div><p class="ccert-org">Zero Cube Climate &amp; Social Impact Foundation</p><p class="ccert-sub">A Section 8 not-for-profit company · CIN U88900PN2026NPL260913</p></div><p class="ccert-no">Certificate no.<b>'+esc(r.certNo)+'</b></p></div>'+
-  '<h2 class="ccert-t">Climate Duty Bearer<br>Commitment Certificate</h2>'+
+  '<h2 class="ccert-t">Climate Duty Bearer<br>Pledge Certificate</h2>'+
   '<p class="ccert-l">This certifies that</p><p class="ccert-name">'+esc(ZCDocs.dispName(p))+'</p>'+
-  '<p class="ccert-l">has made the lifelong <b>Zero Cube Climate Duty Pledge</b> — a personal commitment to daily climate habits and to quality education — and that this pledge is recorded, unchanged, in the Zero Cube Pledge Ledger.</p>'+
+  '<p class="ccert-l">has made the lifelong <b>Zero Cube Climate Duty Pledge</b> — a personal promise to keep daily climate habits and to support quality education — and that this pledge is recorded, unchanged, in the Zero Cube Pledge Ledger.</p>'+
   '<table class="ccert-tb"><tbody>'+
   '<tr><th scope="row">Pledge ID</th><td>'+esc(p.id)+'</td><th scope="row">Date pledged</th><td>'+esc(fd(p.date))+' (once, for life)</td></tr>'+
-  '<tr><th scope="row">Commitments</th><td>'+(p.ids||[]).length+' daily habits</td><th scope="row">Education pledge</th><td>'+e.students+' student'+(e.students>1?"s":"")+' '+(e.mode==="teach"?"taught or mentored":"supported")+' a year</td></tr>'+
+  '<tr><th scope="row">Habits pledged</th><td>'+(p.ids||[]).length+' daily habits</td><th scope="row">Education pledge</th><td>'+e.students+' student'+(e.students>1?"s":"")+' '+(e.mode==="teach"?"taught or mentored":"supported")+' a year</td></tr>'+
   '<tr><th scope="row">Pledged estimate</th><td colspan="3">≈'+fmtKg(k.kg)+' CO₂e a year — an <i>indicative estimate of the pledge</i>, not a measured or verified reduction</td></tr>'+
   '<tr><th scope="row">Pledge on ledger</th><td colspan="3">Block #'+esc(r.pledgeBlock)+' · fingerprint <code>'+esc(r.pledgeFp)+'</code></td></tr>'+
   '<tr><th scope="row">This certificate</th><td colspan="3">Issued '+esc(fd(r.issued))+' · '+(c.block!=null?'recorded in block #'+esc(c.block):'recorded in the ledger the night of issue')+' · fingerprint <code>'+esc(c.fp)+'</code></td></tr>'+
   '</tbody></table>'+
-  '<div class="ccert-what"><b>What this certificate certifies:</b> the <b>commitment</b> (the pledge) made by the person named above, and that its record is unchanged. It does <b>not</b> certify achieved results, measured or verified emission reductions, carbon credits, or an audit.</div>'+
+  '<div class="ccert-what"><b>What this certificate confirms:</b> that the person named above <b>took the pledge</b>, and that its ledger record is unchanged. It does <b>not</b> certify achieved results, measured or verified emission reductions, carbon credits, or an audit.</div>'+
   '<div class="ccert-foot"><div class="ccert-sig"><span class="sigph">[Signature placeholder]</span><small>Director<br>Zero Cube Climate &amp; Social Impact Foundation</small></div>'+
   '<div class="ccert-sig"><span class="sigph">[Signature placeholder]</span><small>Director<br>Zero Cube Climate &amp; Social Impact Foundation</small></div>'+
   '<div class="ccert-qr">'+qrSvg(url)+'<small>Verify: '+esc(url.replace(/^https?:\/\//,""))+'</small></div></div>'+
-  '<p class="lresp">Issued to a Zero Cube member at no extra fee, under the Zero Cube Pledge terms (draft). A voluntary moral commitment — not a legal contract, donation or certification of results.</p></div></div>'}
+  '<p class="lresp">Issued to a Zero Cube member at no extra fee, under the Zero Cube Pledge terms (draft). A voluntary moral pledge — not a legal contract, donation or certification of results.</p></div></div>'}
 function ccRender(){var el=$("#ccBody"),c=S.cert;
-  if(!memberActive()&&c.status!=="Issued"){el.innerHTML=lockBox("The Commitment Certificate");return}
+  if(!memberActive()&&c.status!=="Issued"){el.innerHTML=lockBox("The Pledge Certificate");return}
   if(!ready()){el.innerHTML='<p class="mp-wait">🔒 You can apply once your pledge is <b>approved</b> and recorded in the Zero Cube Pledge Ledger (the night after approval).</p>';return}
   if(c.status==="none"){
-    el.innerHTML='<div class="cc-intro"><p>Get a formal <b>Climate Duty Bearer Commitment Certificate</b> for your lifelong pledge. (Your Certificate of Honour below is our thank-you; this one is a formal certificate you apply for.) It shows your pledge ID, its ledger block and fingerprint, and a QR code anyone can scan to verify it. <b>No extra fee for members.</b></p>'+
+    el.innerHTML='<div class="cc-intro"><p>Get a formal <b>Climate Duty Bearer Pledge Certificate</b> for your lifelong pledge. (Your Certificate of Honour below is our thank-you; this one is a formal certificate you apply for.) It shows your pledge ID, its ledger block and fingerprint, and a QR code anyone can scan to verify it. <b>No extra fee for members.</b></p>'+
     '<ol class="steps-s"><li><b>1</b><span><b>Apply</b> here (one click).</span></li><li><b>2</b><span><b>Under review:</b> our team checks your pledge and its ledger record.</span></li><li><b>3</b><span><b>Issued:</b> we record the certificate\'s own fingerprint in the ledger and email you the PDF. You can also print it here.</span></li></ol></div>'+
     '<form id="ccForm" class="pform" novalidate><div class="frow"><label for="ccName">Name to be printed</label><input id="ccName" value="'+esc(ZCDocs.dispName(S.p))+'" readonly aria-describedby="ccNameH"><p class="fhelp" id="ccNameH">As on your pledge. To correct it, email us before applying.</p></div>'+
     '<label class="chk"><input type="checkbox" id="ccOk1" required><span>My pledge details shown on this page are correct.</span></label>'+
-    '<label class="chk"><input type="checkbox" id="ccOk2" required><span>I understand the certificate certifies my <b>commitment</b> (my pledge), not achieved results or verified emission cuts.</span></label>'+
-    '<button class="btn btn-pri" type="submit">Apply for my Commitment Certificate</button><div id="ccStatus" class="pstatus" role="status" aria-live="polite"></div></form>';
+    '<label class="chk"><input type="checkbox" id="ccOk2" required><span>I understand the certificate confirms that I <b>took the pledge</b>, not achieved results or verified emission cuts.</span></label>'+
+    '<button class="btn btn-pri" type="submit">Apply for my Pledge Certificate</button><div id="ccStatus" class="pstatus" role="status" aria-live="polite"></div></form>';
     $("#ccForm").addEventListener("submit",function(ev){ev.preventDefault();var st=$("#ccStatus");
       if(!$("#ccOk1").checked||!$("#ccOk2").checked){h.msg(st,"Please tick both boxes to apply.","err");return}
       if(S.demo||!C.ENDPOINT){S.cert={status:"Applied",applied:today()};save();render();var t=$("#ccStatus2");if(t)h.msg(t,"<b>Demo mode:</b> nothing was sent. When live, we email you when the status changes.","demo");return}
@@ -93,7 +93,7 @@ function ccRender(){var el=$("#ccBody"),c=S.cert;
   if(c.status!=="Issued"){el.innerHTML=stepper(CC_STEPS,c.status)+'<p>Applied on <b>'+esc(fd(c.applied||today()))+'</b>. '+(c.status==="Applied"?"Your application is in the queue.":"Our team is checking your pledge and its ledger record.")+' We will email you when it is issued (usually within a few working days).</p><div id="ccStatus2" class="pstatus" role="status" aria-live="polite"></div>';return}
   var d=certData();
   var lapsed=!memberActive();
-  el.innerHTML=stepper(CC_STEPS,"Issued")+(lapsed?'<p class="pstatus demo">Your membership is '+esc(ms().toLowerCase())+'. This certificate <b>stays valid as a record</b> of your commitment. Renewal, upgrades and progress updates need an active membership. <a href="'+joinUrl()+'">Renew my membership</a></p>':'')+'<p>Issued on <b>'+esc(fd(d.record.issued))+'</b> · certificate no. <b>'+esc(d.record.certNo)+'</b> · '+(d.block!=null?'recorded in <a href="ledger.html#b='+esc(d.block)+'">ledger block #'+esc(d.block)+'</a>.':'its fingerprint goes into tonight\'s ledger block.')+'</p>'+
+  el.innerHTML=stepper(CC_STEPS,"Issued")+(lapsed?'<p class="pstatus demo">Your membership is '+esc(ms().toLowerCase())+'. This certificate <b>stays valid as a record</b> of your pledge. Renewal, upgrades and progress updates need an active membership. <a href="'+joinUrl()+'">Renew my membership</a></p>':'')+'<p>Issued on <b>'+esc(fd(d.record.issued))+'</b> · certificate no. <b>'+esc(d.record.certNo)+'</b> · '+(d.block!=null?'recorded in <a href="ledger.html#b='+esc(d.block)+'">ledger block #'+esc(d.block)+'</a>.':'its fingerprint goes into tonight\'s ledger block.')+'</p>'+
   '<div class="mp-cert">'+ccHTML()+'</div>'+
   '<p class="row"><button class="btn btn-pri" type="button" id="ccPrint">Print / save as PDF</button><a class="btn btn-ghost" href="verify.html?id='+encodeURIComponent(d.record.certNo)+'">Verify this certificate</a><button class="btn btn-ghost" type="button" id="ccRec">Download certificate record (.json)</button></p>'+
   '<details class="acc prog"><summary>Add a progress update <span class="selfd">self-declared</span></summary><div class="accb"><p>Tell us how your habits are going. Updates are <b>self-declared</b>: we do not check them, and they are not shown on the certificate. They help with a later renewal or upgrade.</p>'+

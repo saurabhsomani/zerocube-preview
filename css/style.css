@@ -498,7 +498,7 @@ code.hash.sm{font-size:.72rem}
 @media (max-width:860px){.lg-sum{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 .lg-t{width:100%}
 .lg-t{display:table!important}
-/* ---- round 19: next steps, Commitment Certificate, Net Zero audit interest ---- */
+/* ---- round 19: next steps, Pledge Certificate, Net Zero audit interest ---- */
 .mp-next{margin:22px 0}.next-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .ns-tile{border:1px solid #DCE6E0;border-radius:14px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:8px}
 .ns-tile h4{margin:0;font-size:1.05rem}.ns-tile p{margin:0;font-size:.93rem}.ns-tile .btn{margin-top:auto;align-self:flex-start}

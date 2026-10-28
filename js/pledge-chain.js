@@ -44,7 +44,7 @@ function record(p, salt, meta){
     date:String(p.date||""), method:meta.method || ZC_CALC.D.version, terms:meta.terms || "draft-2026-10d", salt:String(salt)};
 }
 function fingerprint(rec){ return sha256(canon(rec)); }
-/* Commitment Certificate record (certifies the COMMITMENT only). Its own fingerprint is recorded in the ledger as an entry {id: certNo, fp, kind: "certificate"}. */
+/* Pledge Certificate record (confirms the PLEDGE only). Its own fingerprint is recorded in the ledger as an entry {id: certNo, fp, kind: "certificate"}. */
 function certRecord(o){ return {v:1, kind:"commitment-certificate", certNo:String(o.certNo), pledgeId:String(o.pledgeId), pledgeFp:String(o.pledgeFp), pledgeBlock:Number(o.pledgeBlock),
   name:String(o.name||""), issued:String(o.issued), terms:o.terms || "draft-2026-10e", salt:String(o.salt)}; }
 /* ---------- Merkle tree over the sorted fingerprints. Node = SHA-256("zc-node:" + left + right); an unpaired node moves up unchanged. ---------- */
