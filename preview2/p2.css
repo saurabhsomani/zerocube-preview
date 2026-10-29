@@ -101,3 +101,12 @@ footer b{color:#fff}
 main img[src*="zc-school-talk"]{object-position:22% 50%!important}
 main img[src*="zc-students-group"]{object-position:50% 60%!important}
 main img[src*="zc-plant-team"]{object-position:45% 60%!important}
+/* ADVISORY BOARD (29 Oct 2026) */
+.advs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.adv{background:#fff;border-radius:18px;padding:22px 20px;box-shadow:0 8px 26px rgba(15,61,46,.08);text-align:center}
+.adv .av{width:76px;height:76px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;font:700 1.5rem/1 "MA",system-ui,sans-serif;color:#fff;background:linear-gradient(135deg,var(--forest),var(--leaf))}
+.adv h3{font-size:1.05rem;color:var(--forest)}
+.adv p{margin:6px 0 0;font-size:.88rem;color:var(--muted);line-height:1.4}
+.adv .fo{display:inline-block;margin-top:10px;background:var(--mint);color:var(--forest);border-radius:999px;padding:4px 12px;font-size:.78rem;font-weight:700}
+.adv a{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:700;color:var(--forest)}
+.sec.mint .adv{box-shadow:0 6px 20px rgba(15,61,46,.06)}
