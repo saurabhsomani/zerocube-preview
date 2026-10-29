@@ -26,3 +26,8 @@
 .advlinks .advlink{margin-top:0}
 .advli{display:inline-flex;gap:6px;align-items:center;color:#0A66C2;font-weight:700;font-size:.9rem;text-decoration:none}
 .advli:hover{text-decoration:underline}
+/* ADVSHORT (29 Oct 2026) */
+.advbtns{display:flex;flex-wrap:wrap;gap:6px}
+.advbtn{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:700;line-height:1;padding:7px 10px;border-radius:999px;border:1px solid #CFE6D8;background:#fff;color:#0F3D2E;text-decoration:none}
+.advbtn:hover{background:#EEF6F1}.advbtn.isli{color:#0A66C2;border-color:#C9DDF2}
+.advcard{min-height:0}.advlinks{margin-top:auto;padding-top:12px}
