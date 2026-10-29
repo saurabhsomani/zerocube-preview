@@ -17,3 +17,5 @@
 .advchip i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .78rem/1 system-ui,sans-serif;font-style:normal;color:#fff;background:linear-gradient(135deg,#0F3D2E,#2E8B57)}
 .advstrip a.advmore{font-weight:700;color:#0F3D2E;white-space:nowrap}
 .advstrip small{flex-basis:100%;text-align:center;color:var(--muted,#4B5B55);font-size:.8rem}
+.advpointer .advavs{display:flex;justify-content:center;margin:0 auto 12px}
+.advpointer .advavs i{width:46px;height:46px;margin:0 -6px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font:700 .9rem/1 MA,system-ui,sans-serif;font-style:normal;color:#fff;background:linear-gradient(135deg,#0F3D2E,#2E8B57)}
