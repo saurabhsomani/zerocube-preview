@@ -1,0 +1,24 @@
+/* STORY (29 Oct 2026): Stewards of the Mission page */
+.ssplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:center}
+@media(max-width:860px){.ssplit{grid-template-columns:minmax(0,1fr);gap:20px}}
+.sfig{margin:0;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(15,61,46,.12);background:#fff}
+.sfig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.sfig{position:relative}.sfig figcaption{position:static!important;inset:auto!important;background:#fff!important;color:var(--muted,#4B5B55)!important;backdrop-filter:none!important;border-radius:0!important;font-size:.78rem;color:var(--muted,#4B5B55);padding:8px 12px}
+.stxt h2{margin:.2em 0 .5em}.stxt p{font-size:1.02rem;line-height:1.65}
+.snote{font-size:.84rem!important;color:var(--muted,#4B5B55);border-left:3px solid #CFE6D8;padding-left:12px}
+.swhatif{display:grid;gap:14px;max-width:860px;margin:0 auto}
+.swhatif p{margin:0;background:#fff;border:1px solid #DCE8E1;border-radius:16px;padding:16px 20px;font-size:1.08rem;line-height:1.55;color:#0F3D2E}
+.sanswer{max-width:760px;margin:22px auto 0;text-align:center;font-size:1.05rem;line-height:1.6}
+.svm{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.sdirs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));max-width:980px;margin:0 auto}
+.sdir{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line,#DCE8E1);border-radius:18px;padding:22px;box-shadow:0 8px 26px rgba(15,61,46,.07)}
+.sdir h3{margin:0;color:#0F3D2E}.sdir p{margin:.35em 0;font-size:.95rem;color:var(--muted,#4B5B55)}
+.sdes{display:inline-block;background:#EEF6F1;color:#0F3D2E!important;font-weight:700;border-radius:999px;padding:3px 12px;font-size:.82rem!important}
+.scenter{text-align:center}
+.cscatag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.02em;color:#8A5A00;background:#FFF4D6;border:1px dashed #D9A441;border-radius:6px;padding:1px 7px;vertical-align:middle}
+.sstat{max-width:820px;margin:0 auto 20px;text-align:center;background:#F3F9F5;border:1px solid #DCE8E1;border-radius:14px;padding:12px 16px;font-size:.95rem}
+.spromise{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.spromise div{background:#fff;border:1px solid #DCE8E1;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.spromise b{color:#0F3D2E;font-size:1.02rem}.spromise span{font-size:.92rem;color:var(--muted,#4B5B55);line-height:1.5}
+.sdisc{margin:26px auto 0;max-width:820px;text-align:center}
+.sfacts{max-width:860px;margin:0 auto}
