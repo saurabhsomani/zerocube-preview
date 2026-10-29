@@ -110,3 +110,7 @@ main img[src*="zc-plant-team"]{object-position:45% 60%!important}
 .adv .fo{display:inline-block;margin-top:10px;background:var(--mint);color:var(--forest);border-radius:999px;padding:4px 12px;font-size:.78rem;font-weight:700}
 .adv a{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:700;color:var(--forest)}
 .sec.mint .adv{box-shadow:0 6px 20px rgba(15,61,46,.06)}
+/* ADVPHOTOS (29 Oct 2026) */
+.adv .av{overflow:hidden}.adv .av img{width:100%;height:100%;object-fit:cover;display:block}
+.adv .al{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-top:8px}
+.adv .al a{margin-top:0}.adv a.li{display:inline-flex;gap:5px;align-items:center;color:#0A66C2}
