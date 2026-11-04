@@ -6,7 +6,7 @@
    MEMBERSHIP_OPEN: true from the post-bank-account launch (24 Oct 2026). Payment details live in build_parts/launch_config.py (PAY).
    See SETUP.md in the project root for the step-by-step backend setup. */
 window.ZC_PLEDGE_CONFIG = {
-  ENDPOINT: "",
+  ENDPOINT: "https://script.google.com/macros/s/AKfycby0dtttlCcdBDz5Vs2UUgAavjTBfc06AMNY-Y_gTIXA_rKIvcQgRtqJpUXIJ-CSHQxG/exec",
   DEMO: false,
   MEMBERSHIP_OPEN: false,  /* WISHLIST 4 Nov 2026: bank account not open yet; applications only */
   WAITLIST_EMAIL: "zerocubecif@gmail.com",
