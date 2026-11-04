@@ -8,7 +8,7 @@
 window.ZC_PLEDGE_CONFIG = {
   ENDPOINT: "",
   DEMO: false,
-  MEMBERSHIP_OPEN: true,   /* LAUNCH 24 Oct 2026: bank account active, membership open */
+  MEMBERSHIP_OPEN: false,  /* WISHLIST 4 Nov 2026: bank account not open yet; applications only */
   WAITLIST_EMAIL: "zerocubecif@gmail.com",
   SITE_URL: "https://saurabhsomani.github.io/zerocube/",
   PLEDGE_PATH: "pledge.html",

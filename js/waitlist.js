@@ -17,8 +17,8 @@ function build(){
   else{dlg=document.createElement("dialog");dlg.className="wl-dlg";dlg.id="wlDialog";}
   dlg.setAttribute("aria-labelledby","wlTitle");
   dlg.innerHTML='<form id="wlForm" class="pform wl-form" novalidate>'+
-  '<div class="wl-head"><div><span class="eyebrow">Membership application</span><h2 id="wlTitle">Join the movement</h2></div><button type="button" class="wl-x" id="wlClose" aria-label="Close">×</button></div>'+
-  '<p class="wl-note" role="note">Open to anyone, anywhere in the world. Apply here, then pay your fee by bank transfer, UPI or online (<a href="'+ROOT+'membership.html#pay">how to pay</a>). For tiers that need screening or a size-based fee, we email you first. People outside India: please write to us before paying.</p>'+
+  '<div class="wl-head"><div><span class="eyebrow">Membership application</span><h2 id="wlTitle">Apply for membership (wishlist)</h2></div><button type="button" class="wl-x" id="wlClose" aria-label="Close">×</button></div>'+
+  '<p class="wl-note" role="note">Open to anyone, anywhere in the world. <b>Thank you for your interest.</b> Our team will review and confirm your membership within 20 days, and will then contact you by email and phone about the membership fee. No payment is taken now.</p>'+
   '<div class="frow"><label for="wlName">Full name *</label><input id="wlName" name="name" required maxlength="80" autocomplete="name"></div>'+
   '<div class="frow"><label for="wlEmail">Email *</label><input id="wlEmail" name="email" type="email" required maxlength="120" autocomplete="email"></div>'+
   '<div class="frow"><label for="wlPhone">Phone / WhatsApp * <small>(with country code if outside India)</small></label><input id="wlPhone" name="phone" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210 or +44 20 7946 0000"></div>'+
@@ -60,7 +60,7 @@ function submit(e){e.preventDefault();var f=e.target;if(f.website.value)return;
   if(C.ENDPOINT){btn.disabled=true;msg("Sending…");
     fetch(C.ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"waitlist",name:d.name,email:d.email,phone:d.phone,country:d.country,tier:d.tier,org:d.org,contribute:d.contribute,consent:true,page:location.pathname,website:""})})
      .then(function(r){return r.json()}).then(function(j){btn.disabled=false;
-       if(j.ok){msg("<b>Thank you, "+esc(d.name.split(" ")[0])+"!</b> We have your membership application"+(j.duplicate?" (we already had your details, so we updated them)":"")+". Next: pay your fee (<a href=\""+ROOT+"membership.html#pay\">how to pay</a>) and send us the payment reference. Nothing has been charged.","ok");f.reset()}
+       if(j.ok){msg("<b>Thank you, "+esc(d.name.split(" ")[0])+"!</b> We have your membership application"+(j.duplicate?" (we already had your details, so we updated them)":"")+". Thank you for your interest. We will confirm your membership within 20 days, then contact you by email and phone about the fee. No payment now. Nothing has been charged.","ok");f.reset()}
        else msg(esc(j.error||"Something went wrong. Please try again."),"err")},
      function(){btn.disabled=false;mailFallback(d,"We could not reach our server, so ")});
     return}
@@ -68,7 +68,7 @@ function submit(e){e.preventDefault();var f=e.target;if(f.website.value)return;
 }
 function mailFallback(d,pre){var body="I would like to join the Zero Cube movement. I am applying for membership.\n\nName: "+d.name+"\nEmail: "+d.email+"\nPhone: "+d.phone+"\nCountry: "+d.country+"\nTier: "+d.tier+"\nOrganisation: "+(d.org||"—")+"\nHow I would like to contribute: "+(d.contribute||"—")+"\n\nI agree that Zero Cube may store these details and contact me about joining. I understand this form is not a payment.";
   var href="mailto:"+TO+"?subject="+encodeURIComponent("Membership application — "+d.tier)+"&body="+encodeURIComponent(body);
-  var tail="If it does not open, <a href=\""+esc(href)+"\">click here</a> or email <a href=\"mailto:"+TO+"\">"+TO+"</a>. Next: pay your fee (<a href=\""+ROOT+"membership.html#pay\">how to pay</a>) and send us the payment reference.";
+  var tail="If it does not open, <a href=\""+esc(href)+"\">click here</a> or email <a href=\"mailto:"+TO+"\">"+TO+"</a>. Thank you for your interest. We will confirm your membership within 20 days, then contact you by email and phone about the fee. No payment now.";
   msg(pre?esc(pre)+"your email app should open with your details filled in — just press <b>Send</b>. "+tail:"Your email app should open with your details filled in — just press <b>Send</b> to apply. "+tail,"ok");
   try{window.location.href=href}catch(e){}
 }
