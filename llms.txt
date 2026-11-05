@@ -14,6 +14,26 @@ Legal name: ZERO CUBE CLIMATE & SOCIAL IMPACT FOUNDATION, a not-for-profit compa
 ## Membership (wishlist)
 Membership has 18 ways to belong, for people, students, schools, businesses, NPOs and others. While the Foundation's bank account is being opened, membership is a wishlist: people apply on the website, the team reviews and confirms within 20 days, then contacts them by email and phone about the membership fee. No payment is taken now. People outside India take part through membership fees only.
 
+## Membership fees (proposed, subject to Board approval; in Indian rupees; paid only after confirmation)
+- Student / Youth Member: ₹1,000 / year
+- Individual Supporter: ₹2,500 / year
+- Lifetime Supporter: ₹1,00,000 one-time
+- Expert / Volunteer Associate: No fee — give time
+- Patron / Founding Circle: ₹2,50,000+
+- Education Champion: ₹500 / year · free for govt & low-fee school teachers
+- Student Sponsor: ₹1,500 / year
+- Green School Partner: ₹25,000 / year · govt & low-fee schools free or sliding
+- Startup Supporter: ₹4,500 / year
+- MSME Member: ₹30,000 / year
+- Eco-Product Manufacturer Member: ₹20,000 / year
+- Corporate Climate Partner — Supporter: ₹50,000 / year
+- Corporate Climate Partner — Partner: ₹2,00,000 / year
+- Corporate Climate Partner — Champion: ₹5,00,000 / year
+- Institution / School Member: ₹10,000 / year · govt & low-fee schools free or sliding
+- 0³ Foundation Member: ₹10,000 / year
+- NPO Member — Verified Projects: From ₹1,500 / year
+- Certified Network Member: Free
+
 ## Donations
 Donations are accepted only from Indian citizens and Indian organisations. The 12A/80G application is pending; 80G receipts will be available only after approval.
 
@@ -24,7 +44,7 @@ Donations are accepted only from Indian citizens and Indian organisations. The 1
 - [Quality education](https://saurabhsomani.github.io/zerocube-preview/education.html)
 - [Net Zero Villages](https://saurabhsomani.github.io/zerocube-preview/villages.html)
 - [Membership](https://saurabhsomani.github.io/zerocube-preview/membership.html)
-- [Apply for membership](https://saurabhsomani.github.io/zerocube-preview/join.html)
+- [Join the movement: Step 1 free pledge, Step 2 membership](https://saurabhsomani.github.io/zerocube-preview/join.html)
 - [Free learning: Climate Academy](https://saurabhsomani.github.io/zerocube-preview/academy.html)
 - [Take the Pledge](https://saurabhsomani.github.io/zerocube-preview/pledge.html)
 - [Donate (Indian donors)](https://saurabhsomani.github.io/zerocube-preview/donate.html)
