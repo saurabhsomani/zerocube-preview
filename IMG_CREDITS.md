@@ -69,3 +69,13 @@ Shared by Rtn Rajendrakumar V Saraf (email of 27 Oct 2026). Originals: saraf_pho
 - zc-school-talk.webp: IMG-20260317-WA0138.jpg (2026-02-21): A speaker giving a climate talk to schoolchildren in a classroom. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
 - zc-trashion.webp: 20251223_200838.jpg (2025-12-23): Children on stage at a “Sustainable Trashion” show of outfits made from waste. Caption: Our founders’ field work, Rotary District 3131 Environment Team, 2025-26 (before Zero Cube was formed).
 - zc-women-talk.webp: IMG_20250311_145338.jpg (2025-03-11): A speaker giving an awareness talk to a room full of women. Caption: Earlier community work by our founders, 2025 (before Zero Cube was formed).
+
+## Representative videos (Pexels), added 5 Nov 2026 (Diwali launch)
+Moved from Preview 2. Source and licence record: preview2_parts/media_src/videos.json. Pexels License: https://www.pexels.com/license/ (free use, attribution optional; given here). Files: media/video/<key>.webm/.mp4 + <key>-poster.webp.
+
+| Key | Description | Pexels title | Creator | Source | Used on |
+|---|---|---|---|---|---|
+| hero-kids | Children running along a village path past a field | Kids and Cart with Straw | [@kingshuk-roy95-3184486](https://www.pexels.com/@kingshuk-roy95-3184486) | https://www.pexels.com/video/kids-and-cart-with-straw-11700830/ | index, education |
+| village-solar | Aerial view of rows of solar panels in a farm field | An aerial view of solar panels in a field | [@rustemmuratov](https://www.pexels.com/@rustemmuratov) | https://www.pexels.com/video/an-aerial-view-of-solar-panels-in-a-field-27009031/ | index, villages |
+| rooftop-solar | Aerial view of a large building with solar panels on its rooftop | Aerial View of Solar Rooftop in Nagpur Hospital | [@in-old-news-llc-338724185](https://www.pexels.com/@in-old-news-llc-338724185) | https://www.pexels.com/video/aerial-view-of-solar-rooftop-in-nagpur-hospital-28977542/ | net-zero |
+| workshop | A sewing machine at work in a small tailoring workshop | Seamstress Working with Sewing Machine in Workshop | [@airamdphoto](https://www.pexels.com/@airamdphoto) | https://www.pexels.com/video/seamstress-working-with-sewing-machine-in-workshop-36066883/ | net-zero |
