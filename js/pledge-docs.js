@@ -47,7 +47,7 @@ function drawCard(cv,story){
     ctx.fillStyle=GOLD;ctx.beginPath();ctx.arc(P+14,y-10,14,0,7);ctx.fill();ctx.strokeStyle=FOREST;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(P+7,y-10);ctx.lineTo(P+12,y-4);ctx.lineTo(P+21,y-16);ctx.stroke();
     ctx.fillStyle="#fff";lines.forEach(function(l,i){ctx.fillText(l,P+48,y+(i?(story?42:36):0))});if(lines.length>1)y+=story?42:36;});
   if(items.length>shown){y+=story?52:42;ctx.fillStyle="#CFE3D8";ctx.fillText("+ "+(items.length-shown)+" more",P+48,y)}
-  if(!items.length){y+=46;ctx.fillStyle="#CFE3D8";ctx.fillText("Tick your pledges on the page",P+48,y)}
+  if(!items.length){y+=46;ctx.fillStyle="#CFE3D8";ctx.fillText("Tick your Climate Contributions on the page",P+48,y)}
   // stat boxes
   var bh=story?190:140, by=H-(story?520:300), bw=(W-2*P-24)/2;
   [["≈"+fmtKg(kg)+" CO₂e / yr","Indicative estimate, every year"],[c.edu.students+" student"+(c.edu.students===1?"":"s"),c.edu.mode==="teach"?c.edu.hoursYear.toLocaleString("en-IN")+" learning hours a year":fmtRs(c.edu.rupeesYear)+" a year · given directly"]].forEach(function(b,i){
@@ -67,14 +67,14 @@ function eduLine(c,d){var e=c.edu;return e.mode==="teach"?'I will find and perso
 function letterHTML(){
   var d=data(),c=calcD(d),dt=today(d),kg=c.kg;
   var items=d.ids.map(function(id){var o=O.find(function(x){return x.id===id});return "<li><b>"+o.t+"</b><br><span>"+OUT(id,c.per[id])+(c.per[id].kg?" — indicative estimate":"")+"</span></li>"}).join("");
-  return '<div class="lh"><img src="assets/img/logo.png" alt="" width="54" height="54"><div><b>ZERO CUBE</b><span>Climate &amp; Social Impact Foundation · Take the Pledge</span></div></div>'+
-  '<p class="ldate">'+dt+(d.city?' · '+esc(d.city):'')+'</p><h2>My Lifelong Climate Duty Pledge</h2>'+
-  '<p>I, <b>'+esc(d.name||"Your Name")+'</b>, take this pledge of my own free will. <b>I take this pledge once, for the rest of my life.</b> Climate action is no longer optional — it is my duty. Nature gave us life; I accept my share of the duty to give every living being a happy, equal future.</p>'+
+  return '<div class="lh"><img src="assets/img/logo.png" alt="" width="54" height="54"><div><b>ZERO CUBE</b><span>Climate &amp; Social Impact Foundation · Make your Climate Contribution</span></div></div>'+
+  '<p class="ldate">'+dt+(d.city?' · '+esc(d.city):'')+'</p><h2>My Lifelong Climate Contribution</h2>'+
+  '<p>I, <b>'+esc(d.name||"Your Name")+'</b>, make this Climate Contribution of my own free will. <b>I make this Climate Contribution once, for the rest of my life.</b> Climate action is no longer optional — it is my duty. Nature gave us life; I accept my share of the duty to give every living being a happy, equal future.</p>'+
   (d.words?'<blockquote>“'+esc(d.words)+'”</blockquote>':'')+
   '<p><b>My daily habits:</b></p><ol>'+(items||'<li>…</li>')+'</ol>'+
   '<p><b>Quality education:</b> '+eduLine(c,d)+'</p>'+
   '<p><b>My tangible outcome, every year:</b> about <b>'+fmtKg(kg)+' CO₂e</b> less'+(c.litres?', about '+c.litres.toLocaleString("en-IN")+' litres of water saved':'')+', and '+(c.edu.mode==="teach"?c.edu.hoursYear.toLocaleString("en-IN")+' learning hours':fmtRs(c.edu.rupeesYear)+' for students')+'. CO₂e is an indicative estimate (Zero Cube Methodology v1), not a measured or verified result.</p>'+
-  '<p class="lresp">This pledge is my personal responsibility and a voluntary moral promise. It is not a legal contract and not a donation to Zero Cube. I may withdraw my details at any time.</p>'+
+  '<p class="lresp">This Climate Contribution is my personal responsibility and a voluntary moral promise. It is not a legal contract and not a donation to Zero Cube. I may withdraw my details at any time.</p>'+
   '<div class="lsig"><span class="sig">'+esc(d.name||"Your Name")+'</span><span>Climate Duty Bearer, for life · signed on '+dt+'</span></div>'+
   '<p class="lfoot">'+(C.SITE_URL+C.PLEDGE_PATH).replace(/^https?:\/\//,"")+' · #'+C.HASHTAG+'</p>';
 }
@@ -82,12 +82,12 @@ function drawLetter(cv){
   var d=data(),c=calcD(d),ctx=cv.getContext("2d"),W=cv.width,H=cv.height,P=110,y=0,kg=c.kg,dt=today(d);
   ctx.fillStyle="#FFFDF7";ctx.fillRect(0,0,W,H);ctx.fillStyle=FOREST;ctx.fillRect(0,0,W,150);ctx.fillStyle=GOLD;ctx.fillRect(0,150,W,8);
   if(logoImg.complete){ctx.fillStyle="#fff";rr(ctx,P,40,72,72,14);ctx.fill();ctx.drawImage(logoImg,P+6,46,60,60)}
-  ctx.fillStyle="#fff";ctx.font="700 38px MA, Lato, sans-serif";ctx.fillText("ZERO CUBE",P+96,80);ctx.fillStyle="#CFE3D8";ctx.font="400 22px Lato, sans-serif";ctx.fillText("Climate & Social Impact Foundation · Take the Pledge",P+96,112);
+  ctx.fillStyle="#fff";ctx.font="700 38px MA, Lato, sans-serif";ctx.fillText("ZERO CUBE",P+96,80);ctx.fillStyle="#CFE3D8";ctx.font="400 22px Lato, sans-serif";ctx.fillText("Climate & Social Impact Foundation · Make your Climate Contribution",P+96,112);
   y=230;ctx.fillStyle="#5B6B66";ctx.font="400 24px Lato, sans-serif";ctx.fillText(dt+(d.city?" · "+d.city:""),P,y);
-  y+=80;ctx.fillStyle=NAVY;ctx.font="italic 500 54px PFD, Georgia, serif";ctx.fillText("My Lifelong Climate Duty Pledge",P,y);
+  y+=80;ctx.fillStyle=NAVY;ctx.font="italic 500 54px PFD, Georgia, serif";ctx.fillText("My Lifelong Climate Contribution",P,y);
   y+=70;ctx.font="400 27px Lato, sans-serif";ctx.fillStyle="#1F2A27";var MW=W-2*P;
   function para(t,f,col,lh){ctx.font=f;ctx.fillStyle=col||"#1F2A27";wrap(ctx,t,MW).forEach(function(l){ctx.fillText(l,P,y);y+=lh||40});y+=14}
-  para("I, "+(d.name||"Your Name")+", take this pledge of my own free will. I take this pledge once, for the rest of my life. Climate action is no longer optional — it is my duty. Nature gave us life; I accept my share of the duty to give every living being a happy, equal future.","400 27px Lato, sans-serif");
+  para("I, "+(d.name||"Your Name")+", make this Climate Contribution of my own free will. I make this Climate Contribution once, for the rest of my life. Climate action is no longer optional — it is my duty. Nature gave us life; I accept my share of the duty to give every living being a happy, equal future.","400 27px Lato, sans-serif");
   if(d.words){ctx.fillStyle=GOLD;ctx.fillRect(P,y-28,5,Math.max(60,wrap(ctx,d.words,MW-40).length*40));var sy=P;P+=30;MW-=30;para("“"+d.words+"”","italic 500 30px PFD, Georgia, serif",FOREST,42);P=sy;MW+=30}
   para("My daily habits:","700 27px Lato, sans-serif",NAVY);
   var compact=d.ids.length>5;
@@ -101,7 +101,7 @@ function drawLetter(cv){
     var sp=P;P+=40;MW-=40;para(plain(o.t),"700 25px Lato, sans-serif","#1F2A27",34);y-=10;para(OUT(id,c.per[id])+(c.per[id].kg?" — indicative estimate":""),"400 22px Lato, sans-serif","#5B6B66",30);P=sp;MW+=40});
   para("Quality education: "+plain(eduLine(c,d)),"400 25px Lato, sans-serif","#1F2A27",36);
   para("My tangible outcome, every year: about "+fmtKg(kg)+" CO₂e less (indicative estimate, Methodology v1)"+(c.litres?", "+c.litres.toLocaleString("en-IN")+" litres of water saved":"")+".","400 24px Lato, sans-serif","#33413C",34);
-  y=Math.max(y+10,H-330);para("A voluntary moral pledge and my personal responsibility — not a legal contract and not a donation to Zero Cube.","italic 400 22px Lato, sans-serif","#5B6B66",32);
+  y=Math.max(y+10,H-330);para("A voluntary personal promise and my personal responsibility — not a legal contract and not a donation to Zero Cube.","italic 400 22px Lato, sans-serif","#5B6B66",32);
   var sy2=Math.min(Math.max(y+60,H-170),H-140);ctx.fillStyle=FOREST;ctx.font="italic 500 56px PFD, Georgia, serif";ctx.fillText(d.name||"Your Name",P,sy2);ctx.fillStyle=GOLD;ctx.fillRect(P,sy2+20,420,3);
   ctx.fillStyle="#5B6B66";ctx.font="400 22px Lato, sans-serif";ctx.fillText("Climate Duty Bearer, for life · signed on "+dt,P,sy2+55);
   ctx.fillStyle=FOREST;ctx.fillRect(0,H-60,W,60);ctx.fillStyle="#fff";ctx.font="700 22px Lato, sans-serif";ctx.fillText((C.SITE_URL+C.PLEDGE_PATH).replace(/^https?:\/\//,"")+"  ·  #"+C.HASHTAG,P,H-22);
@@ -117,7 +117,7 @@ function avatarH(p,cls){return (p.photo&&!p.minor)?'<img class="'+cls+'" src="'+
 function loc(p){return [p.city,p.state].filter(Boolean).join(", ")}
 function opt(id){return O.find(function(o){return o.id===id})}
 /* chain = {leaf, date, demo} from ZC_CHAIN.proofFor(id) (optional) */
-function chainSeal(p,chain,big){if(!chain)return "";return '<a class="chainseal'+(big?' big':'')+'" href="verify.html?id='+encodeURIComponent(p.id)+'" title="Fingerprint of this pledge recorded in the Zero Cube Pledge Ledger — click to verify"><span aria-hidden="true">⛓</span> Blockchain-verified'+(chain.demo?' <b>DEMO</b>':'')+(big?'<small>SHA-256 '+esc(chain.leaf.slice(0,10))+'…'+esc(chain.leaf.slice(-6))+' · Zero Cube Pledge Ledger block #'+esc(chain.block)+'</small>':'')+'</a>'}
+function chainSeal(p,chain,big){if(!chain)return "";return '<a class="chainseal'+(big?' big':'')+'" href="verify.html?id='+encodeURIComponent(p.id)+'" title="Fingerprint of this Climate Contribution recorded in the Zero Cube Climate Contribution Ledger — click to verify"><span aria-hidden="true">⛓</span> Blockchain-verified'+(chain.demo?' <b>DEMO</b>':'')+(big?'<small>SHA-256 '+esc(chain.leaf.slice(0,10))+'…'+esc(chain.leaf.slice(-6))+' · Zero Cube Climate Contribution Ledger block #'+esc(chain.block)+'</small>':'')+'</a>'}
 function chainFor(p){if(p.chain)return p.chain;var X=window.ZC_CHAIN_DEMO;if(p.sample&&X&&X.pledges[p.id]){var q=X.pledges[p.id];return {leaf:q.leaf,block:q.block,date:q.date,status:q.status,demo:true}}return null}
 function certHTML(p,seal,chain){var c=calcD(p),k=c.kg,e=c.edu,groups={};(p.ids||[]).forEach(function(id){var o=opt(id);if(!o)return;var g=plain(o.cat);(groups[g]=groups[g]||[]).push(o)});
   return (p.sample?'<p class="samp-note"><b class="samp">SAMPLE</b> Dummy Climate Duty Bearer for design review — not a real person.</p>':'')+
@@ -128,9 +128,9 @@ function certHTML(p,seal,chain){var c=calcD(p),k=c.kg,e=c.edu,groups={};(p.ids||
   '<div class="cert-habits">'+Object.keys(groups).map(function(g){return '<h3 class="pg-h">'+esc(g)+'</h3><ul class="pg-l">'+groups[g].map(function(o){var r=c.per[o.id];return '<li><b>'+o.t+'</b><span>'+OUT(o.id,r)+(r.kg?' — indicative estimate':'')+'</span></li>'}).join("")+'</ul>'}).join("")+
   '<p><b>Quality education:</b> '+(e.mode==="teach"?'I will find and personally teach or mentor <b>'+e.students+'</b> student'+(e.students>1?'s':'')+' each year, about '+e.hours+' hours a month.':'I will support <b>'+e.students+'</b> student'+(e.students>1?'s':'')+' each year with '+fmtRs(e.amount)+' per student, given directly or through a Verified Project.')+'</p>'+
   (c.litres?'<p class="mini">Also about '+c.litres.toLocaleString("en-IN")+' litres of water saved a year.</p>':'')+'</div>'+
-  '<div class="cert-foot"><div><span class="sig">'+esc(dispName(p))+'</span><small>Climate Duty Bearer, for life</small></div><div><span class="cert-date">'+esc(fdate(p.date))+'</span><small>Date pledged · once, for life</small></div></div>'+
+  '<div class="cert-foot"><div><span class="sig">'+esc(dispName(p))+'</span><small>Climate Duty Bearer, for life</small></div><div><span class="cert-date">'+esc(fdate(p.date))+'</span><small>Date made · once, for life</small></div></div>'+
   (chain?'<div class="cert-chain">'+chainSeal(p,chain,true)+'</div>':'')+
-  '<p class="lresp">A personal, voluntary moral pledge — not a legal contract, a donation or a certification of results. CO₂e under <a href="pledge-methodology.html">Pledge methodology v1</a>.</p></div></div>'}
+  '<p class="lresp">A personal, voluntary personal promise — not a legal contract, a donation or a certification of results. CO₂e under <a href="pledge-methodology.html">Climate Contribution methodology v1</a>.</p></div></div>'}
 return {
   ready:ready,
   card:function(cv,story,d,photo){D=d;photoData=photo||null;drawCard(cv,story)},

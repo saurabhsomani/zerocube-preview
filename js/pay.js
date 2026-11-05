@@ -82,7 +82,7 @@ function chapterForm(box){
   row("chW","Why do you want to start Zero Cube in your country? *",'<textarea id="chW" name="why" rows="4" required maxlength="1500"></textarea>')+
   row("chT","Founding team size *",'<select id="chT" name="team" required><option value="">Choose…</option><option>Just me for now</option><option>2</option><option>3</option><option>4–5</option><option>6 or more</option></select>')+
   '<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">'+
-  '<label class="chk"><input type="checkbox" name="consent" required><span>I agree that Zero Cube may store these details and contact me about starting a chapter. This is not a commitment on either side, and I can ask for my details to be deleted at any time.</span></label>'+
+  '<label class="chk"><input type="checkbox" name="consent" required><span>I agree that Zero Cube may store these details and contact me about starting a chapter. This is not binding on either side, and I can ask for my details to be deleted at any time.</span></label>'+
   '<p class="row"><button class="btn btn-donate" type="submit">Send my interest</button></p><div class="pstatus" role="status" aria-live="polite"></div>';
   box.insertBefore(f,box.firstChild);
   f.addEventListener("submit",function(e){e.preventDefault();if(f.website.value)return;var st=f.querySelector(".pstatus");var v=function(n){return (f[n].value||"").trim()};
@@ -95,7 +95,7 @@ function chapterForm(box){
     if(!v("why"))return err("Please tell us why you would like to start a chapter.",f.why);
     if(!v("team"))return err("Please choose your founding team size.",f.team);
     if(!f.consent.checked)return err("Please tick the consent box so we can contact you.",f.consent);
-    var body="I would like to start Zero Cube in my country.\n\nName: "+v("name")+"\nEmail: "+v("email")+"\nCountry: "+v("country")+"\nCity: "+v("city")+"\nOrganisation or background: "+v("org")+"\nFounding team size: "+v("team")+"\n\nWhy: "+v("why")+"\n\nI agree that Zero Cube may store these details and contact me about starting a chapter. This is not a commitment on either side.";
+    var body="I would like to start Zero Cube in my country.\n\nName: "+v("name")+"\nEmail: "+v("email")+"\nCountry: "+v("country")+"\nCity: "+v("city")+"\nOrganisation or background: "+v("org")+"\nFounding team size: "+v("team")+"\n\nWhy: "+v("why")+"\n\nI agree that Zero Cube may store these details and contact me about starting a chapter. This is not binding on either side.";
     var href="mailto:"+TO+"?subject="+encodeURIComponent("Chapter interest: "+v("country"))+"&body="+encodeURIComponent(body);
     st.className="pstatus ok";st.innerHTML="Your email app should open with your details filled in — just press <b>Send</b>. If it does not open, <a href=\""+esc(href)+"\">click here</a> or email <a href=\"mailto:"+TO+"\">"+TO+"</a>.";
     try{window.location.href=href}catch(x){}

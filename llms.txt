@@ -4,12 +4,15 @@
 
 Legal name: ZERO CUBE CLIMATE & SOCIAL IMPACT FOUNDATION, a not-for-profit company licensed under Section 8 of the Companies Act, 2013, limited by guarantee. CIN U88900PN2026NPL260913. Incorporated 28 September 2026. Registered office: Pune 411038, Maharashtra, India. Directors: Saurabh Somani and Rtn Rajendrakumar V Saraf. Contact: zerocubecif@gmail.com
 
+## My Climate Contribution
+Under the Paris Agreement, countries set Nationally Determined Contributions (NDCs); India aims for net zero by 2070. The world has also agreed SDG 4 (quality education for all), and India’s National Education Policy 2020 aims for equitable, quality learning. My Climate Contribution is the people’s share in both: what each person, school and village does for climate action and for quality, equal education, aligned with these goals. Zero Cube is an independent not-for-profit. This is not a government programme, and no endorsement by any government or the UN is implied. Contributions include climate actions (daily habits, trees, helping local businesses go green) and education actions (teaching, mentoring, supporting a student, school sustainability lessons). Free for everyone.
+
 ## What we do
 - Net Zero and climate action: we check, guide and certify schools, villages, businesses (including MSMEs), NPOs and people as they cut the gases that heat our planet. Our methods are aligned with ISO 14068:2026 and the GHG Protocol. Zero Cube certificates are programme certificates under our own published criteria; they are not government licences or carbon credits.
 - Quality education for every child: free learning for children, a free AI Launchpad course for Std 8-10 in schools we work with, and one all-inclusive school membership that includes the Net Zero Certified School audit and certificate, green audits and an eco-club.
 - Net Zero Villages: help with energy, water, trees, waste and local jobs. Villages never pay; company social funds (CSR) and sponsors fund the work.
 - Free learning for all: public webinars and courses are free; no membership is needed to learn.
-- The Zero Cube Pledge: a free personal pledge to take simple climate-friendly steps.
+- The Zero Cube Climate Contribution: a free personal Climate Contribution to take simple climate-friendly steps.
 
 ## Membership (wishlist)
 Membership has 18 ways to belong, for people, students, schools, businesses, NPOs and others. While the Foundation's bank account is being opened, membership is a wishlist: people apply on the website, the team reviews and confirms within 20 days, then contacts them by email and phone about the membership fee. No payment is taken now. People outside India take part through membership fees only.
@@ -44,9 +47,9 @@ Donations are accepted only from Indian citizens and Indian organisations. The 1
 - [Quality education](https://saurabhsomani.github.io/zerocube-preview/education.html)
 - [Net Zero Villages](https://saurabhsomani.github.io/zerocube-preview/villages.html)
 - [Membership](https://saurabhsomani.github.io/zerocube-preview/membership.html)
-- [Join the movement: Step 1 free pledge, Step 2 membership](https://saurabhsomani.github.io/zerocube-preview/join.html)
+- [Join the movement: Step 1 free Climate Contribution, Step 2 membership](https://saurabhsomani.github.io/zerocube-preview/join.html)
 - [Free learning: Climate Academy](https://saurabhsomani.github.io/zerocube-preview/academy.html)
-- [Take the Pledge](https://saurabhsomani.github.io/zerocube-preview/pledge.html)
+- [Make your Climate Contribution](https://saurabhsomani.github.io/zerocube-preview/pledge.html)
 - [Donate (Indian donors)](https://saurabhsomani.github.io/zerocube-preview/donate.html)
 - [People and Advisory Board](https://saurabhsomani.github.io/zerocube-preview/people.html)
 - [Legal and disclosures](https://saurabhsomani.github.io/zerocube-preview/legal.html)

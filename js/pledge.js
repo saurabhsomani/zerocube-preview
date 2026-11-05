@@ -38,7 +38,7 @@ var lastMode="";
 function eduUI(d){var mode=K.eduMode(d.type,d.minor),E=K.EDU[mode];
   if(mode!==lastMode){lastMode=mode;$("#eduTeach").hidden=mode!=="teach";$("#eduFund").hidden=mode!=="fund";$("#eduPresets").hidden=mode!=="fund";$("#eduNote").hidden=mode!=="fund";
     ["#eHours","#eAmount"].forEach(function(s){$(s).disabled=false});$("#eHours").disabled=mode!=="teach";$("#eAmount").disabled=mode!=="fund";
-    $("#eduWho").innerHTML=mode==="teach"?(d.minor?'<b>Under 18:</b> your education pledge is to <b>teach or tutor</b> — for example, help a younger child read or do maths. No money is asked of under-18s.':'<b>As an educator</b>, you pledge the students you will find and <b>personally teach or mentor</b>, and the hours you will give.'):'<b>Not an educator?</b> You pledge <b>financial support</b> for students’ education — given <b>directly</b> to the student or school, or through a project on our <a href="verified-projects.html">Verified Projects</a> listing.';}
+    $("#eduWho").innerHTML=mode==="teach"?(d.minor?'<b>Under 18:</b> your education contribution is to <b>teach or tutor</b> — for example, help a younger child read or do maths. No money is asked of under-18s.':'<b>As an educator</b>, you offer the students you will find and <b>personally teach or mentor</b>, and the hours you will give.'):'<b>Not an educator?</b> You offer <b>financial support</b> for students’ education — given <b>directly</b> to the student or school, or through a project on our <a href="verified-projects.html">Verified Projects</a> listing.';}
   return mode}
 function update(){
   var d=data(), c=calcD(d), mode=eduUI(d);
@@ -49,10 +49,10 @@ function update(){
   $("#sumN").textContent=d.ids.length; $("#sumKg").textContent=fmtKg(c.kg); $("#sumSt").textContent=e.students;
   $("#sumEdu").textContent=mode==="teach"?e.hoursYear.toLocaleString("en-IN"):fmtRs(e.rupeesYear); $("#sumEduL").textContent=mode==="teach"?"learning hours a year":"a year for students · given directly";
   $("#sumL").textContent=c.litres.toLocaleString("en-IN");
-  $("#eduOut").innerHTML=d.edu.students<1?'<span class="err-t">Please pledge at least 1 student — the education pledge is part of every Climate Duty Bearer’s pledge.</span>':
+  $("#eduOut").innerHTML=d.edu.students<1?'<span class="err-t">Please add at least 1 student — the education contribution is part of every Climate Duty Bearer’s Climate Contribution.</span>':
     (mode==="teach"?'<b>Your outcome:</b> '+e.students+' student'+(e.students>1?'s':'')+' reached · <b>'+e.hoursYear.toLocaleString("en-IN")+' learning hours a year</b> ('+e.hours+' h a month × 12).':
      '<b>Your outcome:</b> '+e.students+' student'+(e.students>1?'s':'')+' supported · <b>'+fmtRs(e.rupeesYear)+' a year</b> ('+e.students+' × '+fmtRs(e.amount)+').');
-  $("#mult").textContent=c.kg?('If 1,000 people take the same pledge: ≈'+fmtKg(c.kg*1000)+' CO₂e a year (indicative).'):'Tick a habit to see how it multiplies when many people take it.';
+  $("#mult").textContent=c.kg?('If 1,000 people make the same Climate Contribution: ≈'+fmtKg(c.kg*1000)+' CO₂e a year (indicative).'):'Tick a habit to see how it multiplies when many people take it.';
   var minor=d.minor; $("#guardianBox").hidden=!minor; $("#cPhoto").disabled=minor; if(minor){$("#cPhoto").checked=false}
   $("#minorPhotoNote").hidden=!minor;
 }
@@ -81,13 +81,13 @@ function letterHTML(){return ZCDocs.letterHTML(data())}
 function ready(){return ZCDocs.ready()}
 function validMake(){var d=data();if(!d.name){status("Please enter your name.","err");$("#pname").focus();return false}
   if(!d.ids.length){status("Please tick at least one daily habit.","err");return false}
-  if(d.edu.students<1){status("Please pledge at least 1 student in the Quality education section.","err");$("#eStudents").focus();return false}
-  if(!$("#cLife").checked){status("Please confirm the lifelong pledge statement.","err");$("#cLife").focus();return false}
+  if(d.edu.students<1){status("Please add at least 1 student in the Quality education section.","err");$("#eStudents").focus();return false}
+  if(!$("#cLife").checked){status("Please confirm the lifelong Climate Contribution statement.","err");$("#cLife").focus();return false}
   if(!$("#cResp").checked){status("Please confirm the responsibility statement.","err");$("#cResp").focus();return false}
   if(d.minor&&(!d.guardian||!$("#cGuard").checked)){status("Under 18: please add your parent/guardian's name and their consent.","err");return false}return true}
 $("#btnMake").addEventListener("click",function(){ if(!validMake())return; ready().then(function(){
   drawCard($("#cardSq"),false);drawCard($("#cardStory"),true);$("#letterDoc").innerHTML=letterHTML();drawLetter($("#letterCv"));
-  $("#pout").hidden=false;$("#pout").scrollIntoView({behavior:"smooth"});status("Your pledge card and letter are ready below. Download or share them.","ok");}) });
+  $("#pout").hidden=false;$("#pout").scrollIntoView({behavior:"smooth"});status("Your Climate Contribution card and letter are ready below. Download or share them.","ok");}) });
 
 function dl(cv,name){var a=document.createElement("a");a.download=name;a.href=cv.toDataURL("image/png");document.body.appendChild(a);a.click();a.remove()}
 var slug=function(){return (data().name||"pledge").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")};
@@ -97,15 +97,15 @@ $("#dlLetter").addEventListener("click",function(){dl($("#letterCv"),"zerocube-p
 $("#printLetter").addEventListener("click",function(){document.body.classList.add("print-letter");window.print();setTimeout(function(){document.body.classList.remove("print-letter")},500)});
 
 /* ---------- share ---------- */
-var shareURL=C.SITE_URL+C.PLEDGE_PATH, shareText=function(){var c=calcD(data());return "I am a Climate Duty Bearer — climate action is no longer optional, it is our duty. I took the Zero Cube Pledge for life"+(c.kg?": about "+fmtKg(c.kg)+" CO₂e a year less (indicative)":"")+" and "+c.edu.students+" student"+(c.edu.students>1?"s":"")+" supported every year. Take yours: "};
+var shareURL=C.SITE_URL+C.PLEDGE_PATH, shareText=function(){var c=calcD(data());return "I am a Climate Duty Bearer — climate action is no longer optional, it is our duty. I made my Climate Contribution with Zero Cube for life"+(c.kg?": about "+fmtKg(c.kg)+" CO₂e a year less (indicative)":"")+" and "+c.edu.students+" student"+(c.edu.students>1?"s":"")+" supported every year. Take yours: "};
 $("#shWa").addEventListener("click",function(){window.open("https://wa.me/?text="+encodeURIComponent(shareText()+shareURL+" #"+C.HASHTAG),"_blank","noopener")});
 $("#shLi").addEventListener("click",function(){window.open("https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(shareURL),"_blank","noopener")});
 $("#shX").addEventListener("click",function(){window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(shareText())+"&url="+encodeURIComponent(shareURL)+"&hashtags="+C.HASHTAG,"_blank","noopener")});
 $("#shFb").addEventListener("click",function(){window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(shareURL),"_blank","noopener")});
 $("#shNative").addEventListener("click",function(){
   $("#cardSq").toBlob(function(b){var f=new File([b],"zerocube-pledge.png",{type:"image/png"});
-    if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],title:"Zero Cube Pledge",text:shareText()+shareURL}).catch(function(){});
-    else if(navigator.share)navigator.share({title:"Zero Cube Pledge",text:shareText(),url:shareURL}).catch(function(){});
+    if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],title:"Zero Cube Climate Contribution",text:shareText()+shareURL}).catch(function(){});
+    else if(navigator.share)navigator.share({title:"Zero Cube Climate Contribution",text:shareText(),url:shareURL}).catch(function(){});
     else status("Your browser cannot share directly — download the card and use the buttons below.","err");});
 });
 
@@ -113,21 +113,21 @@ $("#shNative").addEventListener("click",function(){
 $("#btnSubmit").addEventListener("click",function(){
   if(!validMake())return; var d=data();
   if(!$("#cDir").checked){status("To appear on the Wall of Honour, please tick the public-display consent.","err");$("#cDir").focus();return}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){status("Please enter a valid email (kept private; used only to confirm or withdraw your pledge).","err");$("#pemail").focus();return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){status("Please enter a valid email (kept private; used only to confirm or withdraw your Climate Contribution).","err");$("#pemail").focus();return}
   if($("#hp").value){status("Thank you.","ok");return} // honeypot
   if(d.phone&&d.phone.replace(/\D/g,"").length<10){status("Please check your phone number (10 digits), or leave it empty.","err");$("#pphone").focus();return}
   var c=calcD(d);
   var payload={name:d.name,city:d.city,state:d.state,type:d.type,email:d.email,phone:d.phone,minor:d.minor,guardian:d.minor?d.guardian:"",guardianConsent:d.minor?$("#cGuard").checked:false,
     words:d.words,ids:d.ids,inputs:K.cleanInputs(d.ids,d.inputs),fam:d.fam,edu:{students:c.edu.students,hours:c.edu.hours||0,amount:c.edu.amount||0},kg:c.kg,lifelong:true,consentDirectory:true,consentPhoto:!d.minor&&$("#cPhoto").checked,
     photo:(!d.minor&&$("#cPhoto").checked&&photoData)?photoData.dataURL:"",date:d.date,termsVersion:"draft-2026-10b"};
-  if(!C.ENDPOINT){status(C.DEMO?"<b>Demo mode:</b> nothing was sent or saved. The pledge database is not connected yet. Your card and letter still work — download and share them. (When live, one pledge per person: a second pledge with the same email or phone is refused.)":"<b>Almost there:</b> our pledge register opens in a few days, so your pledge was not saved yet. Your card and letter still work — download and share them, and please come back to add your name to the Wall of Honour.","demo");return}
+  if(!C.ENDPOINT){status(C.DEMO?"<b>Demo mode:</b> nothing was sent or saved. The Climate Contribution database is not connected yet. Your card and letter still work — download and share them. (When live, one Climate Contribution per person: a second Climate Contribution with the same email or phone is refused.)":"<b>Almost there:</b> our Climate Contribution register opens in a few days, so your Climate Contribution was not saved yet. Your card and letter still work — download and share them, and please come back to add your name to the Wall of Honour.","demo");return}
   status("Sending…","");$("#btnSubmit").disabled=true;
   fetch(C.ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)})
    .then(function(r){return r.json()}).then(function(j){
-     if(j.ok)status("Thank you! Your lifelong pledge is received. You will appear as a Climate Duty Bearer on the <a href=\""+C.DIRECTORY_PATH+"\">Wall of Honour</a> after a quick review.","ok");
-     else if(j.duplicate)status("<b>You have already taken the pledge.</b> It is a one-time, lifelong pledge — thank you! "+(j.id?'<a href="'+C.DIRECTORY_PATH+'#p='+encodeURIComponent(j.id)+'">See your Climate Duty Bearer profile</a>.':'Your pledge is waiting for a quick review and will appear on the <a href="'+C.DIRECTORY_PATH+'">Wall of Honour</a> soon.')+' To change it, email us from the same address.',"ok");
+     if(j.ok)status("Thank you! Your lifelong Climate Contribution is received. You will appear as a Climate Duty Bearer on the <a href=\""+C.DIRECTORY_PATH+"\">Wall of Honour</a> after a quick review.","ok");
+     else if(j.duplicate)status("<b>You have already made your Climate Contribution.</b> It is a one-time, lifelong Climate Contribution — thank you! "+(j.id?'<a href="'+C.DIRECTORY_PATH+'#p='+encodeURIComponent(j.id)+'">See your Climate Duty Bearer profile</a>.':'Your Climate Contribution is waiting for a quick review and will appear on the <a href="'+C.DIRECTORY_PATH+'">Wall of Honour</a> soon.')+' To change it, email us from the same address.',"ok");
      else status("Sorry — "+esc(j.error||"something went wrong")+".","err") })
-   .catch(function(){status("Sorry — we could not reach the pledge server. Please try again later.","err")})
+   .catch(function(){status("Sorry — we could not reach the Climate Contribution server. Please try again later.","err")})
    .finally(function(){$("#btnSubmit").disabled=false});
 });
 })();

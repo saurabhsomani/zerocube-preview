@@ -105,7 +105,7 @@ mq.addEventListener&&mq.addEventListener("change",function(){if(!mq.matches)clos
 /* ---------- share + profile ---------- */
 function toast(m){var t=$("#dtoast");if(!t){t=document.createElement("div");t.id="dtoast";t.className="dtoast";t.setAttribute("role","status");document.body.appendChild(t)}t.textContent=m;t.classList.add("on");setTimeout(function(){t.classList.remove("on")},2200)}
 function share(p){var url=profURL(p),txt=dispName(p)+" is a Climate Duty Bearer on Zero Cube's Wall of Honour — "+(p.ids||[]).length+" daily habits (≈"+fmtKg(kg(p))+" CO₂e a year, indicative) and "+stu(p)+" student"+(stu(p)>1?"s":"")+" supported.";
-  if(navigator.share)navigator.share({title:"Zero Cube Pledge",text:txt,url:url}).catch(function(){});
+  if(navigator.share)navigator.share({title:"Zero Cube Climate Contribution",text:txt,url:url}).catch(function(){});
   else if(navigator.clipboard)navigator.clipboard.writeText(url).then(function(){toast("Link copied — paste it anywhere to share.")},function(){prompt("Copy this link:",url)});
   else prompt("Copy this link:",url)}
 function profile(p){return ZCDocs.certHTML(p,SEAL,ZCDocs.chainFor(p))}
@@ -121,7 +121,7 @@ window.addEventListener("hashchange",function(){var m=location.hash.match(/^#p=(
 /* ---------- boot ---------- */
 readURL();
 pledgeFetchList().then(function(d){all=(d.items||[]).map(function(p,i){p.id=p.id||("p"+i);return p});isSample=d.sample;$("#dsample").hidden=!d.sample;
-  if(d.prelaunch||(!all.length&&!d.sample)){var em=$("#dempty");if(em){var h3=em.querySelector("h3"),p=em.querySelector("p");if(h3)h3.textContent="Our first Climate Duty Bearers will appear here";if(p)p.textContent="The Wall of Honour opens at launch. Take the pledge and be among the first.";}}
+  if(d.prelaunch||(!all.length&&!d.sample)){var em=$("#dempty");if(em){var h3=em.querySelector("h3"),p=em.querySelector("p");if(h3)h3.textContent="Our first Climate Duty Bearers will appear here";if(p)p.textContent="The Wall of Honour opens at launch. Make your Climate Contribution and be among the first.";}}
   update(false);
   var m=location.hash.match(/^#p=(.+)$/);if(m)openProfile(decodeURIComponent(m[1]));});
 renderPledgeCounter();
